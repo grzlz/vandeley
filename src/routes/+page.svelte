@@ -108,12 +108,16 @@
                 <nav class="glass-accent border-b border-primary-200/50">
                     <div class="container mx-auto px-6 py-4">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 
-                                            rounded-xl flex items-center justify-center text-white text-lg shadow-lg">
-                                    🏗️
+                            <div class="flex items-center gap-5">
+                                <img src="/logo.png" alt="Vandeley Logo" class="w-16 h-auto" />
+                                <div class="flex flex-col justify-center">
+                                    <div class="text-2xl font-bold text-primary-900 tracking-tight font-primary leading-tight">
+                                        vandeley.art
+                                    </div>
+                                    <div class="text-sm text-primary-600 font-medium tracking-wide font-primary opacity-80">
+                                        software architect
+                                    </div>
                                 </div>
-                                <div class="text-xl font-bold text-primary-900">Git Analytics</div>
                             </div>
                             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-primary-700">
                                 <span class="flex items-center gap-2">
