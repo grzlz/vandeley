@@ -107,7 +107,7 @@
                 <!-- Navigation -->
                 <nav class="bg-gray-800/90 backdrop-blur-md border-b border-gray-700/50">
                     <div class="container mx-auto px-6 py-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-center md:justify-between">
                             <div class="flex items-center gap-5">
                                 <img src="/logo.png" alt="Vandeley Logo" class="w-16 h-auto" />
                                 <div class="flex flex-col justify-center">
@@ -119,7 +119,12 @@
                                     </div>
                                 </div>
                             </div>
-     
+                            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+                                <span class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    Architecture Intelligence
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -128,8 +133,8 @@
                 <section class="container mx-auto px-6 py-20">
                     <div class="text-center mb-16">
                         <div class="flex items-center justify-center gap-4 mb-8">
-                            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 
-                                        rounded-3xl flex items-center justify-center text-white text-3xl 
+                            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 
+                                        rounded-3xl items-center justify-center text-white text-3xl 
                                         shadow-2xl transform rotate-3 hover:rotate-6 transition-transform duration-300">
                                 📊
                             </div>
@@ -147,38 +152,9 @@
                         
                         <p class="text-2xl text-gray-50 max-w-4xl mx-auto leading-relaxed mb-8 font-light">
                             Transform your <span class="font-semibold text-white">git history</span> into 
-                            <span class="font-semibold text-white">actionable architectural insights</span>. <br />
-                            Advanced analytics for software architects scaling from MVP to enterprise.
+                            <span class="font-semibold text-white">actionable architectural insights</span>. <br class="hidden md:block" />
+                            <span class="hidden md:inline">Advanced analytics for software architects scaling from MVP to enterprise.</span>
                         </p>
-                        
-                        <!-- Tech Features -->
-                        <div class="flex flex-wrap justify-center gap-4 mb-12">
-                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
-                                <span class="w-2 h-2 bg-red-400 rounded-full"></span>
-                                Technical Debt Analysis
-                            </span>
-                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
-                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                                Scaling Readiness KPIs
-                            </span>
-                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
-                                <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
-                                Velocity Health Metrics
-                            </span>
-                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
-                                <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                MVP → Scale Transition
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <!-- File Upload Hero -->
-                    <div class="max-w-3xl mx-auto mb-16">
-                        <FileUpload on:fileLoaded={handleFileLoaded} />
                     </div>
                     
                     <!-- Architecture KPI Preview -->
@@ -219,71 +195,75 @@
                             <p class="text-sm text-primary-200">Component coupling, performance debt, infrastructure drift</p>
                         </div>
                     </div>
+                    
+                    <!-- File Upload Hero -->
+                    <div class="max-w-3xl mx-auto mb-16">
+                        <FileUpload on:fileLoaded={handleFileLoaded} />
+                    </div>
+                    
+                    <!-- Instructions Section -->
+                    <div class="max-w-5xl mx-auto mb-16">
+                        <div class="glass-accent rounded-3xl p-8 md:p-12 shadow-2xl">
+                            <div class="text-center mb-8">
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-100 mb-4 flex items-center justify-center gap-3">
+                                    <span class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blue-500 to-blue-600 
+                                                 rounded-xl flex items-center justify-center text-white text-base md:text-lg">💡</span>
+                                    Get Started in 30 Seconds
+                                </h2>
+                                <p class="text-lg md:text-xl text-gray-200 font-light">Generate your git log and upload for instant architecture insights</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                                <div class="space-y-4 md:space-y-6">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-100 mb-4 flex items-center gap-3">
+                                        <span class="w-7 h-7 md:w-8 md:h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center text-xs md:text-sm font-bold">1</span>
+                                        Basic Analysis
+                                    </h3>
+                                    <div class="bg-gray-800 text-gray-100 p-4 md:p-6 rounded-xl font-mono text-xs md:text-sm shadow-inner">
+                                        <div class="text-green-400 mb-2"># In your project directory:</div>
+                                        <div class="text-white">git log --stat > gitlog.txt</div>
+                                    </div>
+                                    <div class="text-xs md:text-sm text-gray-300 leading-relaxed">
+                                        <strong>Perfect for:</strong> Team velocity, commit patterns, file hotspots, contributor analytics
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-4 md:space-y-6">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-100 mb-4 flex items-center gap-3">
+                                        <span class="w-7 h-7 md:w-8 md:h-8 bg-purple-500 text-white rounded-lg flex items-center justify-center text-xs md:text-sm font-bold">2</span>
+                                        Deep Architecture Analysis
+                                    </h3>
+                                    <div class="bg-gray-800 text-gray-100 p-4 md:p-6 rounded-xl font-mono text-xs md:text-sm shadow-inner">
+                                        <div class="text-green-400 mb-2"># For advanced KPIs:</div>
+                                        <div class="text-white break-all">git log --stat --date=iso --pretty=fuller > detailed.txt</div>
+                                    </div>
+                                    <div class="text-xs md:text-sm text-gray-300 leading-relaxed">
+                                        <strong>Perfect for:</strong> Technical debt scoring, scaling readiness, architecture health assessment
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 md:mt-10 p-4 md:p-6 bg-gray-700/40 rounded-2xl border border-gray-600/30">
+                                <div class="flex items-start gap-3 md:gap-4">
+                                    <div class="w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-1">
+                                        ✓
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-100 font-semibold mb-2 text-sm md:text-base">Pro Tip for Software Architects:</p>
+                                        <p class="text-gray-200 text-xs md:text-sm leading-relaxed">
+                                            Include <code class="bg-gray-600 px-2 py-1 rounded text-xs">--all</code> to analyze all branches, 
+                                            or use <code class="bg-gray-600 px-2 py-1 rounded text-xs">--since="6 months ago"</code> 
+                                            to focus on recent architecture evolution patterns.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
         
-        <!-- Instructions Section -->
-        <section class="container mx-auto px-6 py-16">
-            <div class="max-w-5xl mx-auto">
-                <div class="glass-accent rounded-3xl p-12 shadow-2xl">
-                    <div class="text-center mb-10">
-                        <h2 class="text-3xl font-bold text-primary-400 mb-4 flex items-center justify-center gap-3">
-                            <span class="w-10 h-10 bg-gradient-to-br from-secondary-500 to-secondary-600 
-                                         rounded-xl flex items-center justify-center text-white text-lg">💡</span>
-                            Get Started in 30 Seconds
-                        </h2>
-                        <p class="text-xl text-primary-200 font-light">Generate your git log and upload for instant architecture insights</p>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-bold text-primary-400 mb-4 flex items-center gap-3">
-                                <span class="w-8 h-8 bg-primary-500 text-white rounded-lg flex items-center justify-center text-sm font-bold">1</span>
-                                Basic Analysis
-                            </h3>
-                            <div class="bg-secondary-900 text-secondary-100 p-6 rounded-xl font-mono text-sm shadow-inner">
-                                <div class="text-green-400 mb-2"># In your project directory:</div>
-                                <div class="text-white">git log --stat > gitlog.txt</div>
-                            </div>
-                            <div class="text-sm text-primary-600 leading-relaxed">
-                                <strong>Perfect for:</strong> Team velocity, commit patterns, file hotspots, contributor analytics
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-bold text-primary-400 mb-4 flex items-center gap-3">
-                                <span class="w-8 h-8 bg-secondary-500 text-white rounded-lg flex items-center justify-center text-sm font-bold">2</span>
-                                Deep Architecture Analysis
-                            </h3>
-                            <div class="bg-secondary-900 text-secondary-100 p-6 rounded-xl font-mono text-sm shadow-inner">
-                                <div class="text-green-400 mb-2"># For advanced KPIs:</div>
-                                <div class="text-white break-all">git log --stat --date=iso --pretty=fuller > detailed.txt</div>
-                            </div>
-                            <div class="text-sm text-primary-600 leading-relaxed">
-                                <strong>Perfect for:</strong> Technical debt scoring, scaling readiness, architecture health assessment
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-10 p-6 bg-gradient-to-r from-primary-100/80 to-secondary-100/80 rounded-2xl border border-primary-200/50">
-                        <div class="flex items-start gap-4">
-                            <div class="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-1">
-                                ✓
-                            </div>
-                            <div>
-                                <p class="text-primary-800 font-semibold mb-2">Pro Tip for Software Architects:</p>
-                                <p class="text-primary-700 text-sm leading-relaxed">
-                                    Include <code class="bg-primary-200 px-2 py-1 rounded text-xs">--all</code> to analyze all branches, 
-                                    or use <code class="bg-primary-200 px-2 py-1 rounded text-xs">--since="6 months ago"</code> 
-                                    to focus on recent architecture evolution patterns.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     {:else}
         <!-- Dashboard Container -->
         <div class="bg-gradient-to-br from-primary-50 via-secondary-50 to-primary-100 min-h-screen">
