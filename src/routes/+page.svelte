@@ -91,12 +91,12 @@
     }
 </script>
 
-<main class="min-h-screen font-primary antialiased">
+<main class="min-h-screen font-primary antialiased bg-gray-900">
     {#if !analytics && !error}
         <!-- Hero Landing Page -->
         <div class="relative overflow-hidden">
             <!-- Animated Background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-secondary-50 to-primary-100">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
                 <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
                 <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
@@ -105,26 +105,21 @@
             <!-- Hero Content -->
             <div class="relative z-10">
                 <!-- Navigation -->
-                <nav class="glass-accent border-b border-primary-200/50">
+                <nav class="bg-gray-800/90 backdrop-blur-md border-b border-gray-700/50">
                     <div class="container mx-auto px-6 py-4">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-5">
                                 <img src="/logo.png" alt="Vandeley Logo" class="w-16 h-auto" />
                                 <div class="flex flex-col justify-center">
-                                    <div class="text-2xl font-bold text-primary-900 tracking-tight font-primary leading-tight">
+                                    <div class="text-2xl font-bold text-white tracking-tight font-primary leading-tight">
                                         vandeley.art
                                     </div>
-                                    <div class="text-sm text-primary-600 font-medium tracking-wide font-primary opacity-80">
+                                    <div class="text-sm text-gray-300 font-medium tracking-wide font-primary">
                                         software architect
                                     </div>
                                 </div>
                             </div>
-                            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-primary-700">
-                                <span class="flex items-center gap-2">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                    Architecture Intelligence
-                                </span>
-                            </div>
+     
                         </div>
                     </div>
                 </nav>
@@ -139,43 +134,43 @@
                                 📊
                             </div>
                             <div>
-                                <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary-600 via-primary-700 to-secondary-600 
+                                <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 
                                            bg-clip-text text-transparent leading-tight">
                                     Architecture
                                 </h1>
-                                <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-secondary-600 to-primary-600 
+                                <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-300 to-white 
                                            bg-clip-text text-transparent leading-tight">
                                     Intelligence
                                 </h1>
                             </div>
                         </div>
                         
-                        <p class="text-2xl text-primary-800 max-w-4xl mx-auto leading-relaxed mb-8 font-light">
-                            Transform your <span class="font-semibold text-primary-900">git history</span> into 
-                            <span class="font-semibold text-secondary-900">actionable architectural insights</span>. 
+                        <p class="text-2xl text-gray-50 max-w-4xl mx-auto leading-relaxed mb-8 font-light">
+                            Transform your <span class="font-semibold text-white">git history</span> into 
+                            <span class="font-semibold text-white">actionable architectural insights</span>. <br />
                             Advanced analytics for software architects scaling from MVP to enterprise.
                         </p>
                         
                         <!-- Tech Features -->
                         <div class="flex flex-wrap justify-center gap-4 mb-12">
-                            <span class="glass-accent px-4 py-2 rounded-full text-primary-700 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm">
-                                <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
+                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
+                                <span class="w-2 h-2 bg-red-400 rounded-full"></span>
                                 Technical Debt Analysis
                             </span>
-                            <span class="glass-accent px-4 py-2 rounded-full text-primary-700 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm">
-                                <span class="w-2 h-2 bg-secondary-500 rounded-full"></span>
+                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
+                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
+                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
                                 Scaling Readiness KPIs
                             </span>
-                            <span class="glass-accent px-4 py-2 rounded-full text-primary-700 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm">
-                                <span class="w-2 h-2 bg-primary-600 rounded-full"></span>
+                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
+                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
                                 Velocity Health Metrics
                             </span>
-                            <span class="glass-accent px-4 py-2 rounded-full text-primary-700 font-medium text-sm 
-                                         flex items-center gap-2 shadow-sm">
-                                <span class="w-2 h-2 bg-secondary-600 rounded-full"></span>
+                            <span class="bg-gray-700/60 px-4 py-2 rounded-full text-gray-50 font-medium text-sm 
+                                         flex items-center gap-2 shadow-sm border border-gray-600/30">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
                                 MVP → Scale Transition
                             </span>
                         </div>
@@ -193,8 +188,8 @@
                                         flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                                 ⚠️
                             </div>
-                            <h3 class="text-lg font-bold text-primary-900 mb-2">Technical Debt</h3>
-                            <p class="text-sm text-primary-600">Hotspot concentration, churn rates, and architectural violations</p>
+                            <h3 class="text-lg font-bold text-primary-400 mb-2">Technical Debt</h3>
+                            <p class="text-sm text-primary-200">Hotspot concentration, churn rates, and architectural violations</p>
                         </div>
                         
                         <div class="glass-accent rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
@@ -202,8 +197,8 @@
                                         flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                                 📈
                             </div>
-                            <h3 class="text-lg font-bold text-primary-900 mb-2">Scaling Ready</h3>
-                            <p class="text-sm text-primary-600">Team coordination, release frequency, critical dependencies</p>
+                            <h3 class="text-lg font-bold text-primary-400 mb-2">Scaling Ready</h3>
+                            <p class="text-sm text-primary-200">Team coordination, release frequency, critical dependencies</p>
                         </div>
                         
                         <div class="glass-accent rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
@@ -211,8 +206,8 @@
                                         flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                                 ⚡
                             </div>
-                            <h3 class="text-lg font-bold text-primary-900 mb-2">Team Velocity</h3>
-                            <p class="text-sm text-primary-600">Context switching, knowledge silos, onboarding complexity</p>
+                            <h3 class="text-lg font-bold text-primary-400 mb-2">Team Velocity</h3>
+                            <p class="text-sm text-primary-300">Context switching, knowledge silos, onboarding complexity</p>
                         </div>
                         
                         <div class="glass-accent rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
@@ -220,8 +215,8 @@
                                         flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                                 🚀
                             </div>
-                            <h3 class="text-lg font-bold text-primary-900 mb-2">MVP → Scale</h3>
-                            <p class="text-sm text-primary-600">Component coupling, performance debt, infrastructure drift</p>
+                            <h3 class="text-lg font-bold text-primary-400 mb-2">MVP → Scale</h3>
+                            <p class="text-sm text-primary-200">Component coupling, performance debt, infrastructure drift</p>
                         </div>
                     </div>
                 </section>
@@ -233,17 +228,17 @@
             <div class="max-w-5xl mx-auto">
                 <div class="glass-accent rounded-3xl p-12 shadow-2xl">
                     <div class="text-center mb-10">
-                        <h2 class="text-3xl font-bold text-primary-900 mb-4 flex items-center justify-center gap-3">
+                        <h2 class="text-3xl font-bold text-primary-400 mb-4 flex items-center justify-center gap-3">
                             <span class="w-10 h-10 bg-gradient-to-br from-secondary-500 to-secondary-600 
                                          rounded-xl flex items-center justify-center text-white text-lg">💡</span>
                             Get Started in 30 Seconds
                         </h2>
-                        <p class="text-xl text-primary-700 font-light">Generate your git log and upload for instant architecture insights</p>
+                        <p class="text-xl text-primary-200 font-light">Generate your git log and upload for instant architecture insights</p>
                     </div>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <div class="space-y-6">
-                            <h3 class="text-xl font-bold text-primary-800 mb-4 flex items-center gap-3">
+                            <h3 class="text-xl font-bold text-primary-400 mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-primary-500 text-white rounded-lg flex items-center justify-center text-sm font-bold">1</span>
                                 Basic Analysis
                             </h3>
@@ -257,7 +252,7 @@
                         </div>
                         
                         <div class="space-y-6">
-                            <h3 class="text-xl font-bold text-primary-800 mb-4 flex items-center gap-3">
+                            <h3 class="text-xl font-bold text-primary-400 mb-4 flex items-center gap-3">
                                 <span class="w-8 h-8 bg-secondary-500 text-white rounded-lg flex items-center justify-center text-sm font-bold">2</span>
                                 Deep Architecture Analysis
                             </h3>

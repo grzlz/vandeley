@@ -101,10 +101,10 @@
                                 rounded-2xl flex items-center justify-center text-primary-500 text-3xl">
                         📁
                     </div>
-                    <h3 class="text-2xl font-bold text-primary-800 mb-3">
+                    <h3 class="text-2xl font-bold text-primary-300 mb-3">
                         Upload Git Log File
                     </h3>
-                    <p class="text-primary-600 mb-6 max-w-md mx-auto leading-relaxed">
+                    <p class="text-primary-200 mb-6 max-w-md mx-auto leading-relaxed">
                         Drag and drop your git log file here, or click to browse. 
                         We'll analyze your commit history and show you beautiful insights.
                     </p>
