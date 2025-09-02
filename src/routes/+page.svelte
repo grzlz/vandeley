@@ -110,7 +110,7 @@
                         <div class="flex items-center justify-center md:justify-between">
                             <div class="flex items-center gap-5">
                                 <img src="/logo.png" alt="Vandeley Logo" class="w-16 h-auto" />
-                                <div class="flex flex-col justify-center items-start">
+                                <div class="flex flex-col items-center">
                                     <div class="text-2xl font-bold text-white tracking-tight font-primary leading-none">
                                         vandeley.art
                                     </div>
