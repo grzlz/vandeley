@@ -119,12 +119,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
-                                <span class="flex items-center gap-2">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                    Architecture Intelligence
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </nav>
@@ -133,11 +127,6 @@
                 <section class="container mx-auto px-6 py-20">
                     <div class="text-center mb-16">
                         <div class="flex items-center justify-center gap-4 mb-8">
-                            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 
-                                        rounded-3xl items-center justify-center text-white text-3xl 
-                                        shadow-2xl transform rotate-3 hover:rotate-6 transition-transform duration-300">
-                                📊
-                            </div>
                             <div>
                                 <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 
                                            bg-clip-text text-transparent leading-tight">
