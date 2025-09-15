@@ -123,7 +123,7 @@
 			<!-- Clean Navigation -->
 			<nav class="sticky top-0 z-50 bg-gray-50/80 backdrop-blur-xl border-b border-gray-200">
 				<div class="container mx-auto px-6 py-4">
-					<div class="flex items-center justify-center">
+					<div class="flex items-center justify-between">
 						<div class="flex items-center gap-4">
 							<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
 							<div class="text-center">
@@ -134,6 +134,17 @@
 									Git Analytics
 								</div>
 							</div>
+						</div>
+
+						<!-- Navigation Links -->
+						<div class="flex items-center gap-6">
+							<a
+								href="/architecture"
+								class="flex items-center gap-2 px-4 py-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+							>
+								<span class="text-lg">📚</span>
+								Learn Architecture
+							</a>
 						</div>
 					</div>
 				</div>
@@ -241,6 +252,60 @@
 								
 								<!-- Subtle bottom accent -->
 								<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-b-3xl"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Architecture Book CTA Section -->
+			<section class="pb-24 px-6">
+				<div class="container mx-auto">
+					<div class="max-w-5xl mx-auto">
+						<div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-12 text-white text-center relative overflow-hidden">
+							<!-- Background pattern -->
+							<div class="absolute inset-0 opacity-10">
+								<div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+							</div>
+
+							<div class="relative z-10">
+								<div class="text-5xl mb-6">📚</div>
+								<h2 class="text-3xl md:text-4xl font-bold mb-4">
+									Free Interactive Book: Building Well-Architected Svelte Apps
+								</h2>
+								<p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+									Master component architecture, design patterns, and best practices with hands-on examples.
+									Learn the principles that separate good components from great ones.
+								</p>
+
+								<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+									<div class="flex items-center gap-2 text-blue-100">
+										<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+										<span>Interactive Examples</span>
+									</div>
+									<div class="flex items-center gap-2 text-blue-100">
+										<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+										<span>Svelte 5 Best Practices</span>
+									</div>
+									<div class="flex items-center gap-2 text-blue-100">
+										<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+										<span>100% Free</span>
+									</div>
+								</div>
+
+								<a
+									href="/architecture"
+									class="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
+								>
+									<span>Start Reading Chapter 1</span>
+									<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+									</svg>
+								</a>
+
+								<div class="mt-6 text-blue-200 text-sm">
+									Chapter 1: Component Architecture Fundamentals • 15 min read
+								</div>
 							</div>
 						</div>
 					</div>
@@ -362,7 +427,8 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 		</div>
 	{:else}
 		<!-- Apple-Inspired Dashboard Container -->
