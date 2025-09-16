@@ -25,9 +25,9 @@
 		}
 	};
 
-	const config = $derived(() => roleConfig[role] || roleConfig.user);
+	const config = $derived(roleConfig[role] || roleConfig.user);
 
-	const badgeClasses = $derived(() => {
+	const badgeClasses = $derived.by(() => {
 		const base = 'inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border';
 		return `${base} ${config.color}`;
 	});

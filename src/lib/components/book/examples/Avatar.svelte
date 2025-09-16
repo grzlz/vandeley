@@ -13,7 +13,7 @@
 		lg: 'w-16 h-16'
 	};
 
-	const fallbackClasses = $derived(() => {
+	const fallbackClasses = $derived.by(() => {
 		const base = 'rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-medium';
 		const textSizes = {
 			sm: 'text-xs',
@@ -23,12 +23,10 @@
 		return `${base} ${sizeClasses[size]} ${textSizes[size]}`;
 	});
 
-	const imageClasses = $derived(() => {
-		return `rounded-full object-cover ${sizeClasses[size]}`;
-	});
+	const imageClasses = $derived(`rounded-full object-cover ${sizeClasses[size]}`);
 
 	// Generate initials from user name
-	const initials = $derived(() => {
+	const initials = $derived.by(() => {
 		if (!user?.name) return '?';
 		return user.name
 			.split(' ')

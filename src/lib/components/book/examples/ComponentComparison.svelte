@@ -2,6 +2,160 @@
   import BadComponent from './BadComponent.svelte';
   import GoodUserCard from './GoodUserCard.svelte';
 
+  const badComponentCode =
+`// BadComponent.svelte - Poor Architecture Example
+
+// 16+ props make this component impossible to memorize
+let {
+  userType, userData, showAvatar, avatarSize, showEmail, showPhone,
+  showActions, actionType, onEdit, onDelete, onView, backgroundColor,
+  textColor, borderStyle, padding
+} = $props();
+
+let isLoading = $state(false);
+let hasError = $state(false);
+let errorMessage = $state('');
+
+// Too much logic in one component
+function handleAction(type) {
+  isLoading = true;
+  setTimeout(() => {
+    if (type === 'edit' && onEdit) {
+      onEdit(userData);
+    } else if (type === 'delete' && onDelete) {
+      onDelete(userData);
+    } else if (type === 'view' && onView) {
+      onView(userData);
+    }
+    isLoading = false;
+  }, 1000);
+}
+
+// Inline styles make this unmaintainable
+const cardStyle = \`
+  background-color: \${backgroundColor || '#ffffff'};
+  color: \${textColor || '#000000'};
+  border: \${borderStyle || '1px solid #e5e7eb'};
+  padding: \${padding || '1rem'};
+\`;
+
+// Template with too many conditional renders
+<div class="user-card" style={cardStyle}>
+  {#if showAvatar}
+    <img src={userData?.avatar || '/default-avatar.png'}
+         alt={userData?.name}
+         style={\`width: \${avatarSize || 48}px;\`} />
+  {/if}
+
+  <div class="user-info">
+    <h3>{userData?.name || 'Unknown User'}</h3>
+    {#if showEmail && userData?.email}
+      <p>Email: {userData.email}</p>
+    {/if}
+    {#if showPhone && userData?.phone}
+      <p>Phone: {userData.phone}</p>
+    {/if}
+
+    {#if userType === 'admin'}
+      <span class="badge admin">Admin</span>
+    {:else if userType === 'moderator'}
+      <span class="badge moderator">Moderator</span>
+    {:else}
+      <span class="badge user">User</span>
+    {/if}
+  </div>
+
+  {#if showActions}
+    <div class="actions">
+      {#if actionType === 'full'}
+        <button onclick={() => handleAction('edit')} disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Edit'}
+        </button>
+        <button onclick={() => handleAction('delete')} disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Delete'}
+        </button>
+        <button onclick={() => handleAction('view')} disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'View'}
+        </button>
+      {/if}
+    </div>
+  {/if}
+</div>`;
+
+  const goodComponentCode =
+`// GoodUserCard.svelte - Well-Architected Example
+
+import Avatar from './Avatar.svelte';
+import UserBadge from './UserBadge.svelte';
+import ActionButtons from './ActionButtons.svelte';
+
+// Clean, intentional prop interface
+let {
+  user,
+  variant = 'default',
+  size = 'md',
+  children,          // Snippet for extension
+  actions,           // Action configuration
+  onclick = undefined,
+  ...restProps
+} = $props();
+
+// Computed styling with clear variants
+const cardClasses = $derived.by(() => {
+  const base = 'user-card rounded-lg border transition-all duration-200';
+  const variants = {
+    default: 'border-gray-200 bg-white hover:shadow-md',
+    compact: 'border-gray-200 bg-white p-4',
+    highlighted: 'border-blue-200 bg-blue-50 hover:bg-blue-100'
+  };
+  const sizes = { sm: 'p-4', md: 'p-6', lg: 'p-8' };
+
+  return \`\${base} \${variants[variant]} \${sizes[size]}\`;
+});
+
+function handleClick() {
+  if (onclick) onclick(user);
+}
+
+// Composable content using snippet
+{#snippet cardContent()}
+  <div class="flex items-center gap-4">
+    <Avatar {user} {size} />
+
+    <div class="min-w-0 flex-1">
+      <div class="mb-1 flex items-center gap-2">
+        <h3 class="truncate font-semibold">{user.name}</h3>
+        <UserBadge role={user.role} />
+      </div>
+
+      {#if user.email}
+        <p class="truncate text-sm text-gray-600">{user.email}</p>
+      {/if}
+
+      {#if children}
+        <div class="mt-2">
+          {@render children({ user })}
+        </div>
+      {/if}
+    </div>
+
+    {#if actions}
+      <ActionButtons {user} {actions} />
+    {/if}
+  </div>
+{/snippet}
+
+<!-- Conditional wrapper based on interactivity -->
+{#if onclick}
+  <button type="button" class={cardClasses} onclick={handleClick} {...restProps}>
+    {@render cardContent()}
+  </button>
+{:else}
+  <div class={cardClasses} {...restProps}>
+    {@render cardContent()}
+  </div>
+{/if}`;
+
   const sampleUser = {
     name: 'Jane Smith',
     email: 'jane@example.com',
@@ -43,6 +197,7 @@
         'Inline styling and conditional logic tightly coupled to the view',
         'Business logic, UI state, and actions all live in the same component'
       ],
+      code: badComponentCode,
       metrics: [
         {
           label: 'Props surface',
@@ -72,6 +227,7 @@
         'Dedicated components for avatar, badge, and actions keep concerns separate',
         'Snippets and action handlers allow extension without modifying the card'
       ],
+      code: goodComponentCode,
       metrics: [
         {
           label: 'Props surface',
@@ -94,10 +250,15 @@
 
   const demoList = Object.values(demos);
   let selectedDemo = $state('bad');
-  const activeDemo = $derived(() => demos[selectedDemo] ?? demos.bad);
+  let showCode = $state(false);
+  const activeDemo = $derived(demos[selectedDemo] || demos.bad);
 
   function selectDemo(id) {
     selectedDemo = id;
+  }
+
+  function toggleCode() {
+    showCode = !showCode;
   }
 </script>
 
@@ -112,22 +273,40 @@
       </p>
     </div>
 
-    <div class="inline-flex w-fit items-center gap-2 rounded-full bg-gray-100 p-1 shadow-inner">
-      {#each demoList as demo}
-        <button
-          type="button"
-          class={
-            selectedDemo === demo.id
-              ? 'inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow apple-transition'
-              : 'inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-gray-600 hover:text-gray-900 apple-transition'
-          }
-          aria-pressed={selectedDemo === demo.id}
-          onclick={() => selectDemo(demo.id)}
-        >
-          <span class="text-base">{demo.emoji}</span>
-          <span>{demo.label}</span>
-        </button>
-      {/each}
+    <div class="flex items-center gap-4">
+      <div class="inline-flex w-fit items-center gap-2 rounded-full bg-gray-100 p-1 shadow-inner">
+        {#each demoList as demo}
+          <button
+            type="button"
+            class={
+              selectedDemo === demo.id
+                ? 'inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow apple-transition'
+                : 'inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-gray-600 hover:text-gray-900 apple-transition'
+            }
+            aria-pressed={selectedDemo === demo.id}
+            onclick={() => selectDemo(demo.id)}
+          >
+            <span class="text-base">{demo.emoji}</span>
+            <span>{demo.label}</span>
+          </button>
+        {/each}
+      </div>
+
+      <button
+        type="button"
+        class={
+          showCode
+            ? 'inline-flex items-center gap-2 rounded-lg bg-blue-100 px-3 py-2 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-200'
+            : 'inline-flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-200'
+        }
+        onclick={toggleCode}
+        aria-pressed={showCode}
+      >
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        <span>{showCode ? 'Hide' : 'Show'} Code</span>
+      </button>
     </div>
   </div>
 
@@ -151,6 +330,26 @@
       {/each}
     </ul>
   </div>
+
+  {#if showCode}
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <div class="mb-4 flex items-center justify-between">
+        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">Source code</h5>
+        <span
+          class={
+            selectedDemo === 'bad'
+              ? 'rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-700'
+              : 'rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700'
+          }
+        >
+          {activeDemo.label}
+        </span>
+      </div>
+      <div class="overflow-x-auto">
+        <pre class="rounded-xl bg-gray-900 p-4 text-sm text-gray-100 overflow-x-auto"><code>{activeDemo.code}</code></pre>
+      </div>
+    </div>
+  {/if}
 
   <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
     <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">

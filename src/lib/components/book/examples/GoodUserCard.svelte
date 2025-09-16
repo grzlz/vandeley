@@ -13,7 +13,7 @@
     ...restProps
   } = $props();
 
-  const cardClasses = $derived(() => {
+  const cardClasses = $derived.by(() => {
     const base =
       'user-card rounded-lg border transition-all duration-200 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2';
     const variants = {
