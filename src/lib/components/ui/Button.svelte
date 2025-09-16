@@ -44,7 +44,7 @@
 	class={buttonClasses}
 	{type}
 	{disabled}
-	onclick={handleClick}
+        on:click={handleClick}
 	{...restProps}
 >
 	{#if loading}

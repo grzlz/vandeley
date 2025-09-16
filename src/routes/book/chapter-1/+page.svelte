@@ -8,6 +8,32 @@
 
   <p>Welcome to the foundation of building well-architected Svelte applications. In this chapter, we'll explore the core principles that separate good components from great ones, and learn how to think architecturally about your Svelte codebase.</p>
 
+  <div class="mb-10 rounded-2xl border border-blue-200 bg-blue-50 p-6 text-blue-900 shadow-inner">
+    <h2 class="text-lg font-semibold">How to use this chapter</h2>
+    <p class="mt-2 text-sm text-blue-900/80">
+      Spend a few focused minutes comparing the anti-pattern and the well-architected solution. Take notes on the prop surfaces,
+      where responsibilities live, and how each example could evolve as requirements change.
+    </p>
+    <ul class="mt-4 grid gap-2 text-sm text-blue-900/80 md:grid-cols-2">
+      <li class="flex items-start gap-2">
+        <span aria-hidden="true">🧠</span>
+        <span>Start by reading the philosophy—look for vocabulary you can use during design reviews.</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span aria-hidden="true">🧩</span>
+        <span>Toggle the live example to feel the difference between accidental complexity and intentional composition.</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span aria-hidden="true">🧪</span>
+        <span>Note the testing implications of each approach. How easy would it be to isolate logic or mock dependencies?</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span aria-hidden="true">🚀</span>
+        <span>Apply the takeaways to a component in your own codebase before moving to the next chapter.</span>
+      </li>
+    </ul>
+  </div>
+
   <h2>The Philosophy of Component Architecture</h2>
 
   <blockquote>
