@@ -1,0 +1,14 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder avatar</title>
+  <desc id="desc">A neutral avatar illustration used as a fallback image.</desc>
+  <defs>
+    <linearGradient id="avatarGradient" x1="10" y1="10" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DBEAFE" />
+      <stop offset="1" stop-color="#C7D2FE" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="72" height="72" rx="36" fill="url(#avatarGradient)" />
+  <rect x="4" y="4" width="72" height="72" rx="36" stroke="#E5E7EB" stroke-width="2" />
+  <circle cx="40" cy="34" r="14" fill="#F9FAFB" />
+  <path d="M40 44C29.954 44 22 51.954 22 62H58C58 51.954 50.046 44 40 44Z" fill="#F3F4F6" />
+</svg>

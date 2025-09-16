@@ -52,7 +52,7 @@
 <div class="user-card" style={cardStyle}>
         {#if showAvatar}
                 <img
-                        src={userData?.avatar || '/default-avatar.png'}
+                        src={userData?.avatar || '/default-avatar.svg'}
                         alt={userData?.name}
                         style={`width: ${(avatarSize || 48)}px; height: ${(avatarSize || 48)}px;`}
                 />

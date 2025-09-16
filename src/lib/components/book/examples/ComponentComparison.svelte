@@ -42,7 +42,7 @@ const cardStyle = \`
 // Template with too many conditional renders
 <div class="user-card" style={cardStyle}>
   {#if showAvatar}
-    <img src={userData?.avatar || '/default-avatar.png'}
+    <img src={userData?.avatar || '/default-avatar.svg'}
          alt={userData?.name}
          style={\`width: \${avatarSize || 48}px;\`} />
   {/if}

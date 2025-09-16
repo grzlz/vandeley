@@ -124,9 +124,9 @@
         </nav>
       </header>
 
-      <div class="grid grid-cols-12 gap-8">
+      <div class="grid gap-8 lg:grid-cols-12">
         <!-- Table of Contents -->
-        <aside class="col-span-3">
+        <aside class="order-2 lg:order-1 lg:col-span-3">
           <div class="sticky top-8">
             <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
               <h3 class="mb-4 font-semibold text-gray-900">Table of Contents</h3>
@@ -168,7 +168,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="col-span-9">
+        <main class="order-1 lg:order-2 lg:col-span-9">
           <article class="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
             <div
               class="prose prose-lg max-w-none
