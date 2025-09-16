@@ -46,9 +46,14 @@
 		reader.readAsText(file);
 	}
 
-	function openFileDialog() {
-		fileInput.click();
-	}
+        function openFileDialog() {
+                fileInput.click();
+        }
+
+        function triggerFileDialog(event) {
+                event.stopPropagation();
+                openFileDialog();
+        }
 </script>
 
 <div class="relative">
@@ -87,7 +92,7 @@
 				</div>
 
                                 <button
-                                        onclick|stopPropagation={openFileDialog}
+                                        onclick={triggerFileDialog}
 					class="transform rounded-xl bg-gradient-to-r from-primary-500 to-primary-600
                            px-6 py-3 font-medium text-white shadow-lg
                            transition-all duration-200 hover:scale-105 hover:from-primary-600 hover:to-primary-700 hover:shadow-xl"
