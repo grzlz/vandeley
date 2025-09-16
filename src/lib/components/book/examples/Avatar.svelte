@@ -59,13 +59,13 @@
 		class={imageClasses}
 		onload={handleImageLoad}
 		onerror={handleImageError}
-		onclick={() => onclick(user)}
+                onclick={() => onclick(user)}
 		{...restProps}
 	/>
 {:else}
 	<div
 		class={fallbackClasses}
-		onclick={() => onclick(user)}
+                onclick={() => onclick(user)}
 		{...restProps}
 	>
 		{initials}

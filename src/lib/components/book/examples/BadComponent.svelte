@@ -50,12 +50,12 @@
 
 <!-- Too many conditional renders -->
 <div class="user-card" style={cardStyle}>
-	{#if showAvatar}
-		<img
-			src={userData?.avatar || '/default-avatar.png'}
-			alt={userData?.name}
-			style="width: {avatarSize || 48}px; height: {avatarSize || 48}px;"
-		/>
+        {#if showAvatar}
+                <img
+                        src={userData?.avatar || '/default-avatar.png'}
+                        alt={userData?.name}
+                        style={`width: ${(avatarSize || 48)}px; height: ${(avatarSize || 48)}px;`}
+                />
 	{/if}
 
 	<div class="user-info">
@@ -81,23 +81,23 @@
 	{#if showActions}
 		<div class="actions">
 			{#if actionType === 'full'}
-				<button onclick={() => handleAction('edit')} disabled={isLoading}>
-					{isLoading ? 'Loading...' : 'Edit'}
-				</button>
-				<button onclick={() => handleAction('delete')} disabled={isLoading}>
-					{isLoading ? 'Loading...' : 'Delete'}
-				</button>
-				<button onclick={() => handleAction('view')} disabled={isLoading}>
-					{isLoading ? 'Loading...' : 'View'}
-				</button>
-			{:else if actionType === 'edit-only'}
-				<button onclick={() => handleAction('edit')} disabled={isLoading}>
-					{isLoading ? 'Loading...' : 'Edit'}
-				</button>
-			{:else if actionType === 'view-only'}
-				<button onclick={() => handleAction('view')} disabled={isLoading}>
-					{isLoading ? 'Loading...' : 'View'}
-				</button>
+                                <button type="button" onclick={() => handleAction('edit')} disabled={isLoading}>
+                                        {isLoading ? 'Loading...' : 'Edit'}
+                                </button>
+                                <button type="button" onclick={() => handleAction('delete')} disabled={isLoading}>
+                                        {isLoading ? 'Loading...' : 'Delete'}
+                                </button>
+                                <button type="button" onclick={() => handleAction('view')} disabled={isLoading}>
+                                        {isLoading ? 'Loading...' : 'View'}
+                                </button>
+                        {:else if actionType === 'edit-only'}
+                                <button type="button" onclick={() => handleAction('edit')} disabled={isLoading}>
+                                        {isLoading ? 'Loading...' : 'Edit'}
+                                </button>
+                        {:else if actionType === 'view-only'}
+                                <button type="button" onclick={() => handleAction('view')} disabled={isLoading}>
+                                        {isLoading ? 'Loading...' : 'View'}
+                                </button>
 			{/if}
 		</div>
 	{/if}
