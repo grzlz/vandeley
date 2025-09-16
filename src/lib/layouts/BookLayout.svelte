@@ -111,7 +111,7 @@
               <button
                 type="button"
                 class={topNavClasses(chapter)}
-                on:click={() => navigateToChapter(chapter)}
+                onclick={() => navigateToChapter(chapter)}
                 disabled={chapter.disabled}
                 aria-current={isActiveChapter(chapter) ? 'page' : undefined}
                 aria-disabled={chapter.disabled ? 'true' : undefined}
@@ -135,7 +135,7 @@
                   <button
                     type="button"
                     class={tableOfContentsClasses(chapter)}
-                    on:click={() => navigateToChapter(chapter)}
+                    onclick={() => navigateToChapter(chapter)}
                     disabled={chapter.disabled}
                     aria-current={isActiveChapter(chapter) ? 'page' : undefined}
                     aria-disabled={chapter.disabled ? 'true' : undefined}
@@ -190,7 +190,7 @@
                   <button
                     type="button"
                     class="flex items-center gap-2 rounded-xl bg-gray-100 px-6 py-3 transition-colors hover:bg-gray-200"
-                    on:click={() => navigateToChapter(prevChapter)}
+                    onclick={() => navigateToChapter(prevChapter)}
                   >
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -208,7 +208,7 @@
                   <button
                     type="button"
                     class="flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-white transition-colors hover:bg-blue-600"
-                    on:click={() => navigateToChapter(nextChapter)}
+                    onclick={() => navigateToChapter(nextChapter)}
                   >
                     <div class="text-right">
                       <div class="text-xs text-blue-100">Next</div>

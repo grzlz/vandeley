@@ -56,7 +56,7 @@
 		type="file"
 		accept=".txt,.log"
 		bind:this={fileInput}
-		on:change={handleFileSelect}
+                onchange={handleFileSelect}
 		class="hidden"
 	/>
 
@@ -65,13 +65,13 @@
                {isDragOver
 			? 'scale-105 border-primary-400 bg-primary-50/20'
 			: 'border-primary-300/50 hover:border-primary-400/70 hover:bg-primary-50/10'}"
-		on:dragover={handleDragOver}
-		on:dragleave={handleDragLeave}
-		on:drop={handleDrop}
+                ondragover={handleDragOver}
+                ondragleave={handleDragLeave}
+                ondrop={handleDrop}
 		role="button"
 		tabindex="0"
-		on:click={openFileDialog}
-		on:keydown={(e) => e.key === 'Enter' && openFileDialog()}
+                onclick={openFileDialog}
+                onkeydown={(e) => e.key === 'Enter' && openFileDialog()}
 	>
 		<div class="p-12 text-center">
 			{#if fileName}
@@ -86,8 +86,8 @@
 					<p class="font-medium text-primary-600">{fileName}</p>
 				</div>
 
-				<button
-					on:click|stopPropagation={openFileDialog}
+                                <button
+                                        onclick|stopPropagation={openFileDialog}
 					class="transform rounded-xl bg-gradient-to-r from-primary-500 to-primary-600
                            px-6 py-3 font-medium text-white shadow-lg
                            transition-all duration-200 hover:scale-105 hover:from-primary-600 hover:to-primary-700 hover:shadow-xl"

@@ -68,7 +68,7 @@
 {/snippet}
 
 {#if onclick}
-  <button type="button" class={cardClasses} on:click={handleClick} {...restProps}>
+  <button type="button" class={cardClasses} onclick={handleClick} {...restProps}>
     {@render cardContent()}
   </button>
 {:else}

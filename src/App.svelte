@@ -185,8 +185,8 @@
 						<p class="mb-6 text-red-700">
 							{error}
 						</p>
-						<button
-							on:click={resetAnalysis}
+                                                <button
+                                                        onclick={resetAnalysis}
 							class="transform rounded-xl bg-gradient-to-r from-primary-500 to-primary-600
                                    px-6 py-3 font-medium text-white
                                    shadow-lg transition-all duration-200 hover:scale-105
@@ -211,8 +211,8 @@
 						>
 						Analytics Dashboard
 					</h2>
-					<button
-						on:click={resetAnalysis}
+                                        <button
+                                                onclick={resetAnalysis}
 						class="flex items-center gap-2 rounded-lg
                                bg-secondary-200 px-4 py-2 font-medium text-secondary-800
                                transition-all duration-200 hover:bg-secondary-300"

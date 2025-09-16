@@ -81,21 +81,21 @@
 	{#if showActions}
 		<div class="actions">
 			{#if actionType === 'full'}
-                                <button type="button" on:click={() => handleAction('edit')} disabled={isLoading}>
+                                <button type="button" onclick={() => handleAction('edit')} disabled={isLoading}>
                                         {isLoading ? 'Loading...' : 'Edit'}
                                 </button>
-                                <button type="button" on:click={() => handleAction('delete')} disabled={isLoading}>
+                                <button type="button" onclick={() => handleAction('delete')} disabled={isLoading}>
                                         {isLoading ? 'Loading...' : 'Delete'}
                                 </button>
-                                <button type="button" on:click={() => handleAction('view')} disabled={isLoading}>
+                                <button type="button" onclick={() => handleAction('view')} disabled={isLoading}>
                                         {isLoading ? 'Loading...' : 'View'}
                                 </button>
                         {:else if actionType === 'edit-only'}
-                                <button type="button" on:click={() => handleAction('edit')} disabled={isLoading}>
+                                <button type="button" onclick={() => handleAction('edit')} disabled={isLoading}>
                                         {isLoading ? 'Loading...' : 'Edit'}
                                 </button>
                         {:else if actionType === 'view-only'}
-                                <button type="button" on:click={() => handleAction('view')} disabled={isLoading}>
+                                <button type="button" onclick={() => handleAction('view')} disabled={isLoading}>
                                         {isLoading ? 'Loading...' : 'View'}
                                 </button>
 			{/if}

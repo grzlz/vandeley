@@ -122,7 +122,7 @@
               : 'inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-gray-600 hover:text-gray-900 apple-transition'
           }
           aria-pressed={selectedDemo === demo.id}
-          on:click={() => selectDemo(demo.id)}
+          onclick={() => selectDemo(demo.id)}
         >
           <span class="text-base">{demo.emoji}</span>
           <span>{demo.label}</span>
