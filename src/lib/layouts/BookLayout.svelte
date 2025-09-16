@@ -13,8 +13,7 @@
     {
       id: 'chapter-2',
       title: 'State Management Patterns',
-      path: '/book/chapter-2',
-      disabled: true
+      path: '/book/chapter-2'
     },
     {
       id: 'chapter-3',
