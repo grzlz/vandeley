@@ -89,6 +89,21 @@
 
 <svelte:head>
 	<title>Architecture Learning Hub | Vandeley Analytics</title>
+	<meta name="description" content="Build well-architected Svelte systems with confidence. Master component architecture through interactive chapters, expert guidance, and hands-on examples." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vandeley.art/architecture" />
+	<meta property="og:title" content="Architecture Learning Hub | Vandeley Analytics" />
+	<meta property="og:description" content="Build well-architected Svelte systems with confidence. Master component architecture through interactive chapters, expert guidance, and hands-on examples." />
+	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://vandeley.art/architecture" />
+	<meta property="twitter:title" content="Architecture Learning Hub | Vandeley Analytics" />
+	<meta property="twitter:description" content="Build well-architected Svelte systems with confidence. Master component architecture through interactive chapters, expert guidance, and hands-on examples." />
+	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
 </svelte:head>
 
 <main class="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
@@ -103,26 +118,27 @@
 	</div>
 
 	<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-		<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-			<a href="/" class="flex items-center gap-4 hover:opacity-80 transition">
-				<img src="/logo.png" alt="Vandeley Logo" class="h-12 w-12 object-contain" />
+		<div class="mx-auto flex max-w-6xl items-center justify-between px-4 md:px-6 py-3 md:py-4">
+			<a href="/" class="flex items-center gap-2 md:gap-4 hover:opacity-80 transition">
+				<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8 md:h-12 md:w-12 object-contain" />
 				<div class="flex flex-col">
-					<div class="text-base font-semibold tracking-tight text-white whitespace-nowrap">vandeley.art</div>
-					<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase whitespace-nowrap">
+					<div class="text-sm md:text-base font-semibold tracking-tight text-white whitespace-nowrap">vandeley.art</div>
+					<div class="text-[0.55rem] md:text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase whitespace-nowrap">
 						Git Analytics
 					</div>
 				</div>
 			</a>
 
-			<div class="flex items-center gap-4 text-sm font-medium">
+			<div class="flex items-center gap-2 md:gap-4 text-xs md:text-sm font-medium">
 				<a
 					href="/"
-					class="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white whitespace-nowrap"
+					class="rounded-full border border-white/10 px-2 md:px-4 py-1.5 md:py-2 text-slate-200 transition hover:border-white/30 hover:text-white whitespace-nowrap"
 				>
-					Analytics Home
+					<span class="hidden sm:inline">Analytics Home</span>
+					<span class="sm:hidden">Home</span>
 				</a>
-				<span class="rounded-full bg-white px-4 py-2 text-slate-900 shadow-sm whitespace-nowrap"
-					>Architecture Hub</span
+				<span class="rounded-full bg-white px-2 md:px-4 py-1.5 md:py-2 text-slate-900 shadow-sm whitespace-nowrap text-xs md:text-sm"
+					><span class="hidden sm:inline">Architecture Hub</span><span class="sm:hidden">Hub</span></span
 				>
 			</div>
 		</div>

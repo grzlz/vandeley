@@ -3,6 +3,25 @@
   import ComponentComparison from '$lib/components/book/examples/ComponentComparison.svelte';
 </script>
 
+<svelte:head>
+	<title>Chapter 1: Component Architecture Fundamentals | Vandeley Analytics</title>
+	<meta name="description" content="Learn the foundation of building well-architected Svelte applications. Explore core principles that separate good components from great ones with interactive examples." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://vandeley.art/book/chapter-1" />
+	<meta property="og:title" content="Chapter 1: Component Architecture Fundamentals | Vandeley Analytics" />
+	<meta property="og:description" content="Learn the foundation of building well-architected Svelte applications. Explore core principles that separate good components from great ones with interactive examples." />
+	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://vandeley.art/book/chapter-1" />
+	<meta property="twitter:title" content="Chapter 1: Component Architecture Fundamentals | Vandeley Analytics" />
+	<meta property="twitter:description" content="Learn the foundation of building well-architected Svelte applications. Explore core principles that separate good components from great ones with interactive examples." />
+	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
+</svelte:head>
+
 <BookLayout>
   <h1>Chapter 1: Component Architecture Fundamentals</h1>
 

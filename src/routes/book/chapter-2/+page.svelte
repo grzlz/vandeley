@@ -3,6 +3,25 @@
   import StateComparison from '$lib/components/book/examples/StateComparison.svelte';
 </script>
 
+<svelte:head>
+	<title>Chapter 2: State Management Patterns | Vandeley Analytics</title>
+	<meta name="description" content="Master state management patterns in Svelte 5. Learn ownership, flow, and synchronization principles that make applications predictable and scalable." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://vandeley.art/book/chapter-2" />
+	<meta property="og:title" content="Chapter 2: State Management Patterns | Vandeley Analytics" />
+	<meta property="og:description" content="Master state management patterns in Svelte 5. Learn ownership, flow, and synchronization principles that make applications predictable and scalable." />
+	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://vandeley.art/book/chapter-2" />
+	<meta property="twitter:title" content="Chapter 2: State Management Patterns | Vandeley Analytics" />
+	<meta property="twitter:description" content="Master state management patterns in Svelte 5. Learn ownership, flow, and synchronization principles that make applications predictable and scalable." />
+	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
+</svelte:head>
+
 <BookLayout>
   <h1>Chapter 2: State Management Patterns</h1>
 

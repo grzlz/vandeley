@@ -1,3 +1,22 @@
+<svelte:head>
+	<title>Vandeley Analytics | Transform Git History into Architectural Insights</title>
+	<meta name="description" content="Advanced analytics for vibecoded tech debt enjoyers. Transform your git history into architectural insights with real-time analysis that runs locally on your device." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vandeley.art/" />
+	<meta property="og:title" content="Vandeley Analytics | Transform Git History into Architectural Insights" />
+	<meta property="og:description" content="Advanced analytics for vibecoded tech debt enjoyers. Transform your git history into architectural insights with real-time analysis that runs locally on your device." />
+	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://vandeley.art/" />
+	<meta property="twitter:title" content="Vandeley Analytics | Transform Git History into Architectural Insights" />
+	<meta property="twitter:description" content="Advanced analytics for vibecoded tech debt enjoyers. Transform your git history into architectural insights with real-time analysis that runs locally on your device." />
+	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
+</svelte:head>
+
 <script>
 	import FileUpload from '../lib/components/FileUpload.svelte';
 	import Dashboard from '../lib/components/Dashboard.svelte';
@@ -122,24 +141,25 @@
 		<div class="relative">
 			<!-- Clean Navigation -->
 			<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-				<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-					<a href="/" class="flex items-center gap-4 hover:opacity-80 transition">
-						<img src="/logo.png" alt="Vandeley Logo" class="h-12 w-12 object-contain" />
+				<div class="mx-auto flex max-w-6xl items-center justify-between px-4 md:px-6 py-3 md:py-4">
+					<a href="/" class="flex items-center gap-2 md:gap-4 hover:opacity-80 transition">
+						<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8 md:h-12 md:w-12 object-contain" />
 						<div class="flex flex-col">
-							<div class="text-base font-semibold tracking-tight text-white whitespace-nowrap">vandeley.art</div>
-							<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase whitespace-nowrap">
+							<div class="text-sm md:text-base font-semibold tracking-tight text-white whitespace-nowrap">vandeley.art</div>
+							<div class="text-[0.55rem] md:text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase whitespace-nowrap">
 								Git Analytics
 							</div>
 						</div>
 					</a>
 
-					<div class="flex items-center gap-4 text-sm font-medium">
+					<div class="flex items-center gap-2 md:gap-4 text-xs md:text-sm font-medium">
 						<a
 							href="/architecture"
-							class="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white whitespace-nowrap"
+							class="flex items-center gap-1 md:gap-2 rounded-full border border-white/10 px-2 md:px-4 py-1.5 md:py-2 text-slate-200 transition hover:border-white/30 hover:text-white whitespace-nowrap"
 						>
-							<span class="text-lg">📚</span>
-							Learn Architecture
+							<span class="text-sm md:text-lg">📚</span>
+							<span class="hidden sm:inline">Learn Architecture</span>
+							<span class="sm:hidden">Learn</span>
 						</a>
 					</div>
 				</div>
@@ -264,7 +284,7 @@
 			<section class="pb-24 px-6">
 				<div class="container mx-auto">
 					<div class="max-w-5xl mx-auto">
-						<div class="relative rounded-3xl p-12 text-center overflow-hidden border border-white/10 bg-slate-900/30 backdrop-blur-xl">
+						<div class="relative rounded-3xl p-12 overflow-hidden border border-white/10 bg-slate-900/30 backdrop-blur-xl">
 							<!-- Glassy background layers -->
 							<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/10"></div>
 							<div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
@@ -273,43 +293,47 @@
 							<div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
 							<div class="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
 
-							<div class="relative z-10">
-								<div class="text-5xl mb-6 filter drop-shadow-lg">📚</div>
-								<h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-									Free Interactive Book: Building Well-Architected Svelte Apps
-								</h2>
-								<p class="text-xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-									Master component architecture, design patterns, and best practices with hands-on examples.
-									Learn the principles that separate good components from great ones.
-								</p>
-
-								<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-									<div class="flex items-center gap-2 text-slate-300">
-										<span class="w-2 h-2 bg-green-400 rounded-full shadow-sm shadow-green-400/50"></span>
-										<span>Interactive Examples</span>
-									</div>
-									<div class="flex items-center gap-2 text-slate-300">
-										<span class="w-2 h-2 bg-blue-400 rounded-full shadow-sm shadow-blue-400/50"></span>
-										<span>Svelte 5 Best Practices</span>
-									</div>
-									<div class="flex items-center gap-2 text-slate-300">
-										<span class="w-2 h-2 bg-purple-400 rounded-full shadow-sm shadow-purple-400/50"></span>
-										<span>100% Free</span>
-									</div>
+							<div class="relative z-10 flex items-center gap-8">
+								<div class="flex-shrink-0">
+									<div class="text-5xl mb-4 filter drop-shadow-lg">📚</div>
 								</div>
 
-								<a
-									href="/architecture"
-									class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
-								>
-									<span>Start Reading Chapter 1</span>
-									<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-									</svg>
-								</a>
+								<div class="flex-1 min-w-0">
+									<h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+										Free Interactive Book: Building Well-Architected Svelte Apps
+									</h2>
+									<p class="text-xl text-slate-200 mb-6 leading-relaxed">
+										Master component architecture, design patterns, and best practices with hands-on examples.
+										Learn the principles that separate good components from great ones.
+									</p>
 
-								<div class="mt-6 text-slate-400 text-sm">
-									Chapter 1: Component Architecture Fundamentals • 15 min read
+									<div class="flex flex-wrap items-center gap-4 mb-6">
+										<div class="flex items-center gap-2 text-slate-300">
+											<span class="w-2 h-2 bg-green-400 rounded-full shadow-sm shadow-green-400/50"></span>
+											<span>Interactive Examples</span>
+										</div>
+										<div class="flex items-center gap-2 text-slate-300">
+											<span class="w-2 h-2 bg-blue-400 rounded-full shadow-sm shadow-blue-400/50"></span>
+											<span>Svelte 5 Best Practices</span>
+										</div>
+										<div class="flex items-center gap-2 text-slate-300">
+											<span class="w-2 h-2 bg-purple-400 rounded-full shadow-sm shadow-purple-400/50"></span>
+											<span>100% Free</span>
+										</div>
+									</div>
+
+									<div class="flex flex-col sm:flex-row items-start gap-4">
+										<a
+											href="/architecture"
+											class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
+										>
+											<span>Read chapter 1 →</span>
+										</a>
+
+										<div class="text-slate-400 text-sm self-center">
+											Chapter 1: Component Architecture Fundamentals • 15 min read
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
