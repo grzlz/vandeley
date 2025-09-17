@@ -4,17 +4,24 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://vandeley.art/" />
+	<meta property="og:url" content="https://www.vandeley.art/" />
 	<meta property="og:title" content="Vandeley Analytics | Transform Git History into Architectural Insights" />
 	<meta property="og:description" content="Advanced analytics for vibecoded tech debt enjoyers. Transform your git history into architectural insights with real-time analysis that runs locally on your device." />
-	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+	<meta property="og:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta property="og:image:width" content="1568" />
+	<meta property="og:image:height" content="879" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:secure_url" content="https://www.vandeley.art/screenshot.png" />
+	<meta property="og:site_name" content="Vandeley Analytics" />
 
 	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://vandeley.art/" />
-	<meta property="twitter:title" content="Vandeley Analytics | Transform Git History into Architectural Insights" />
-	<meta property="twitter:description" content="Advanced analytics for vibecoded tech debt enjoyers. Transform your git history into architectural insights with real-time analysis that runs locally on your device." />
-	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@vandeley" />
+	<meta name="twitter:creator" content="@vandeley" />
+	<meta name="twitter:title" content="Vandeley Analytics | Transform Git History into Architectural Insights" />
+	<meta name="twitter:description" content="Advanced analytics for vibecoded tech debt enjoyers. Transform your git history into architectural insights with real-time analysis that runs locally on your device." />
+	<meta name="twitter:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta name="twitter:image:alt" content="Vandeley Analytics - Git History Analysis Dashboard" />
 </svelte:head>
 
 <script>

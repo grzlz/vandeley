@@ -9,17 +9,23 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://vandeley.art/book/chapter-2" />
+	<meta property="og:url" content="https://www.vandeley.art/book/chapter-2" />
 	<meta property="og:title" content="Chapter 2: State Management Patterns | Vandeley Analytics" />
 	<meta property="og:description" content="Master state management patterns in Svelte 5. Learn ownership, flow, and synchronization principles that make applications predictable and scalable." />
-	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+	<meta property="og:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta property="og:image:width" content="1568" />
+	<meta property="og:image:height" content="879" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:site_name" content="Vandeley Analytics" />
 
 	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://vandeley.art/book/chapter-2" />
-	<meta property="twitter:title" content="Chapter 2: State Management Patterns | Vandeley Analytics" />
-	<meta property="twitter:description" content="Master state management patterns in Svelte 5. Learn ownership, flow, and synchronization principles that make applications predictable and scalable." />
-	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@vandeley" />
+	<meta name="twitter:creator" content="@vandeley" />
+	<meta name="twitter:title" content="Chapter 2: State Management Patterns | Vandeley Analytics" />
+	<meta name="twitter:description" content="Master state management patterns in Svelte 5. Learn ownership, flow, and synchronization principles that make applications predictable and scalable." />
+	<meta name="twitter:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta name="twitter:image:alt" content="Vandeley Analytics - State Management Chapter" />
 </svelte:head>
 
 <BookLayout>

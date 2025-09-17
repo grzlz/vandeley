@@ -93,17 +93,23 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://vandeley.art/architecture" />
+	<meta property="og:url" content="https://www.vandeley.art/architecture" />
 	<meta property="og:title" content="Architecture Learning Hub | Vandeley Analytics" />
 	<meta property="og:description" content="Build well-architected Svelte systems with confidence. Master component architecture through interactive chapters, expert guidance, and hands-on examples." />
-	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
+	<meta property="og:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta property="og:image:width" content="1568" />
+	<meta property="og:image:height" content="879" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:site_name" content="Vandeley Analytics" />
 
 	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://vandeley.art/architecture" />
-	<meta property="twitter:title" content="Architecture Learning Hub | Vandeley Analytics" />
-	<meta property="twitter:description" content="Build well-architected Svelte systems with confidence. Master component architecture through interactive chapters, expert guidance, and hands-on examples." />
-	<meta property="twitter:image" content="https://vandeley.art/screenshot.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@vandeley" />
+	<meta name="twitter:creator" content="@vandeley" />
+	<meta name="twitter:title" content="Architecture Learning Hub | Vandeley Analytics" />
+	<meta name="twitter:description" content="Build well-architected Svelte systems with confidence. Master component architecture through interactive chapters, expert guidance, and hands-on examples." />
+	<meta name="twitter:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta name="twitter:image:alt" content="Vandeley Analytics - Architecture Learning Hub" />
 </svelte:head>
 
 <main class="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
