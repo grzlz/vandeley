@@ -40,21 +40,24 @@
 			authors: 'Mark Richards & Neal Ford',
 			description: 'An engineering approach to software architecture',
 			rating: 4.5,
-			practical: true
+			practical: true,
+			url: 'https://mrce.in/ebooks/Software-Fundamentals%20of%20Software%20Architecture.pdf'
 		},
 		{
 			title: 'Clean Architecture',
 			authors: 'Robert C. Martin',
 			description: "A craftsman's guide to software structure and design",
 			rating: 4.3,
-			practical: true
+			practical: true,
+			url: 'https://agorism.dev/book/software-architecture/%28Robert%20C.%20Martin%20Series%29%20Robert%20C.%20Martin%20-%20Clean%20Architecture_%20A%20Craftsman%E2%80%99s%20Guide%20to%20Software%20Structure%20and%20Design-Prentice%20Hall%20%282017%29.pdf'
 		},
 		{
 			title: 'Software Architecture: The Hard Parts',
 			authors: 'Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani',
 			description: 'Modern trade-off analyses for distributed architectures',
 			rating: 4.4,
-			practical: false
+			practical: false,
+			url: 'https://dl.ebooksworld.ir/books/Software.Architecture.The.Hard.Parts.Neal.Ford.OReilly.9781492086895.EBooksWorld.ir.pdf'
 		}
 	];
 
@@ -101,7 +104,7 @@
 
 	<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
 		<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-			<div class="flex items-center gap-4">
+			<a href="/" class="flex items-center gap-4 hover:opacity-80 transition">
 				<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
 				<div class="text-sm">
 					<div class="text-base font-semibold tracking-tight text-white">vandeley.art</div>
@@ -109,7 +112,7 @@
 						Git Analytics
 					</div>
 				</div>
-			</div>
+			</a>
 
 			<div class="flex items-center gap-4 text-sm font-medium">
 				<a
@@ -302,7 +305,12 @@
 
 			<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 				{#each architectureBooks as book}
-					<div class="rounded-2xl border border-white/10 bg-white/95 p-6 backdrop-blur transition-all hover:bg-white">
+					<a
+						href={book.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block rounded-2xl border border-white/10 bg-white/95 p-6 backdrop-blur transition-all hover:bg-white hover:scale-105 cursor-pointer"
+					>
 						<div class="space-y-4">
 							<div>
 								<h3 class="text-lg font-semibold text-slate-900 leading-tight">{book.title}</h3>
@@ -320,18 +328,23 @@
 									</div>
 									<span class="text-sm font-medium text-slate-700">{book.rating.toFixed(1)}</span>
 								</div>
-								{#if book.practical}
-									<span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
-										Practical
-									</span>
-								{:else}
-									<span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
-										Strategic
-									</span>
-								{/if}
+								<div class="flex items-center gap-2">
+									{#if book.practical}
+										<span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
+											Practical
+										</span>
+									{:else}
+										<span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+											Strategic
+										</span>
+									{/if}
+									<svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+									</svg>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				{/each}
 			</div>
 		</div>

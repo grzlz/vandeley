@@ -8,13 +8,13 @@
 
   <p>Now that we understand component architecture fundamentals, let's explore how to manage state effectively across your Svelte applications. State management is where many applications become complex and hard to maintain—but with the right patterns, it becomes predictable and scalable.</p>
 
-  <div class="mb-10 rounded-2xl border border-blue-200 bg-blue-50 p-6 text-blue-900 shadow-inner">
-    <h2 class="text-lg font-semibold">How to approach this chapter</h2>
-    <p class="mt-2 text-sm text-blue-900/80">
+  <div class="mb-10 rounded-2xl border border-blue-400/30 bg-blue-500/10 p-6 text-blue-100 backdrop-blur">
+    <h2 class="text-lg font-semibold text-white">How to approach this chapter</h2>
+    <p class="mt-2 text-sm text-blue-200">
       Focus on understanding the <em>why</em> behind each pattern. State management isn't about memorizing syntax—it's about
       making architectural decisions that keep your data flow predictable and your components maintainable.
     </p>
-    <ul class="mt-4 grid gap-2 text-sm text-blue-900/80 md:grid-cols-2">
+    <ul class="mt-4 grid gap-2 text-sm text-blue-200 md:grid-cols-2">
       <li class="flex items-start gap-2">
         <span aria-hidden="true">🎯</span>
         <span>Identify the ownership for every piece of state in your application.</span>

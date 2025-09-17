@@ -116,63 +116,58 @@
 	}
 </script>
 
-<main class="min-h-screen bg-gray-50 font-[system-ui,-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif] antialiased">
+<main class="min-h-screen bg-slate-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif] antialiased">
 	{#if showLandingPage}
 		<!-- Apple-Inspired Landing Page -->
 		<div class="relative">
 			<!-- Clean Navigation -->
-			<nav class="sticky top-0 z-50 bg-gray-50/80 backdrop-blur-xl border-b border-gray-200">
-				<div class="container mx-auto px-6 py-4">
-					<div class="flex items-center justify-between">
-						<div class="flex items-center gap-4">
-							<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
-							<div class="text-center">
-								<div class="text-lg font-semibold tracking-tight text-gray-900">
-									vandeley.art
-								</div>
-								<div class="text-xs font-medium tracking-wide text-gray-600 uppercase">
-									Git Analytics
-								</div>
+			<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+				<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+					<div class="flex items-center gap-4">
+						<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
+						<div class="text-sm">
+							<div class="text-base font-semibold tracking-tight text-white">vandeley.art</div>
+							<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase">
+								Git Analytics
 							</div>
 						</div>
+					</div>
 
-						<!-- Navigation Links -->
-						<div class="flex items-center gap-6">
-							<a
-								href="/architecture"
-								class="flex items-center gap-2 px-4 py-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
-							>
-								<span class="text-lg">📚</span>
-								Learn Architecture
-							</a>
-						</div>
+					<div class="flex items-center gap-4 text-sm font-medium">
+						<a
+							href="/architecture"
+							class="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white"
+						>
+							<span class="text-lg">📚</span>
+							Learn Architecture
+						</a>
 					</div>
 				</div>
 			</nav>
 
 			<!-- Hero Section -->
-			<section class="pt-2 pb-16 px-6">
+			<section class="pt-32 pb-16 px-6">
 				<div class="container mx-auto">
 					<!-- Hero + Demo Layout -->
 					<div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center mb-16">
 						<!-- Hero Content - Left Side (2/3) -->
 						<div class="lg:col-span-2">
-							<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 mb-8 leading-[0.9]">
-								Transform git history into 
-								<span class="text-blue-600">architectural insights</span>
+							<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[0.9]">
+								Transform git history into
+								<span class="text-blue-400">architectural insights</span>
 							</h1>
 
-							<p class="text-2xl md:text-3xl text-gray-700 mb-8 font-light leading-relaxed">
+							<p class="text-2xl md:text-3xl text-slate-300 mb-8 font-light leading-relaxed">
 								Advanced analytics for vibecoded tech debt enjoyers.
 							</p>
 						</div>
 
 						<!-- Interactive Demo Playground - Right Side (1/3) -->
 						<div class="lg:col-span-1">
-							<div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+							<div class="bg-slate-900/70 rounded-3xl p-8 border border-white/10 backdrop-blur hover:bg-slate-900/90 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
 								<!-- Subtle background pattern -->
-								<div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/20 pointer-events-none"></div>
-								
+								<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 pointer-events-none"></div>
+
 								<!-- Demo header with enhanced visual hierarchy -->
 								<div class="relative z-10 text-center mb-8">
 									<div class="relative mb-6">
@@ -185,18 +180,18 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<div class="space-y-3">
-										<h3 class="text-2xl font-bold text-gray-900 tracking-tight">
+										<h3 class="text-2xl font-bold text-white tracking-tight">
 											Live Demo
 										</h3>
-										<p class="text-base text-gray-700 font-medium leading-relaxed">
+										<p class="text-base text-slate-300 font-medium leading-relaxed">
 											Upload your git log and watch your codebase come alive
 										</p>
-										<div class="flex items-center justify-center gap-2 text-sm text-gray-500">
-											<div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+										<div class="flex items-center justify-center gap-2 text-sm text-slate-400">
+											<div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
 											<span>Real-time analysis</span>
-											<div class="w-1 h-1 rounded-full bg-gray-300"></div>
+											<div class="w-1 h-1 rounded-full bg-slate-500"></div>
 											<span>Privacy-first</span>
 										</div>
 									</div>
@@ -209,47 +204,47 @@
 								
 								<!-- Demo features preview -->
 								<div class="relative z-10 space-y-4">
-									<div class="bg-gray-50/80 rounded-2xl p-4 border border-gray-100">
-										<h4 class="font-semibold text-gray-900 text-sm mb-3">What you'll discover:</h4>
+									<div class="bg-slate-800/50 rounded-2xl p-4 border border-white/10">
+										<h4 class="font-semibold text-white text-sm mb-3">What you'll discover:</h4>
 										<div class="space-y-2">
 											<div class="flex items-center gap-3">
 												<div class="w-2 h-2 rounded-full bg-red-400"></div>
-												<span class="text-sm text-gray-700">Code hotspots & technical debt</span>
+												<span class="text-sm text-slate-300">Code hotspots & technical debt</span>
 											</div>
 											<div class="flex items-center gap-3">
 												<div class="w-2 h-2 rounded-full bg-blue-400"></div>
-												<span class="text-sm text-gray-700">Team collaboration patterns</span>
+												<span class="text-sm text-slate-300">Team collaboration patterns</span>
 											</div>
 											<div class="flex items-center gap-3">
 												<div class="w-2 h-2 rounded-full bg-purple-400"></div>
-												<span class="text-sm text-gray-700">Architecture health score</span>
+												<span class="text-sm text-slate-300">Architecture health score</span>
 											</div>
 										</div>
 									</div>
-									
+
 									<!-- Trust indicators -->
 									<div class="flex items-center justify-center gap-6 pt-2">
 										<div class="flex items-center gap-2">
-											<div class="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
-												<div class="w-2 h-2 rounded-full bg-green-500"></div>
+											<div class="w-4 h-4 rounded-full bg-green-500/20 flex items-center justify-center">
+												<div class="w-2 h-2 rounded-full bg-green-400"></div>
 											</div>
-											<span class="text-xs text-gray-600 font-medium">Local only</span>
+											<span class="text-xs text-slate-400 font-medium">Local only</span>
 										</div>
 										<div class="flex items-center gap-2">
-											<div class="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center">
-												<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+											<div class="w-4 h-4 rounded-full bg-blue-500/20 flex items-center justify-center">
+												<div class="w-2 h-2 rounded-full bg-blue-400"></div>
 											</div>
-											<span class="text-xs text-gray-600 font-medium">No signup</span>
+											<span class="text-xs text-slate-400 font-medium">No signup</span>
 										</div>
 										<div class="flex items-center gap-2">
-											<div class="w-4 h-4 rounded-full bg-purple-100 flex items-center justify-center">
-												<div class="w-2 h-2 rounded-full bg-purple-500"></div>
+											<div class="w-4 h-4 rounded-full bg-purple-500/20 flex items-center justify-center">
+												<div class="w-2 h-2 rounded-full bg-purple-400"></div>
 											</div>
-											<span class="text-xs text-gray-600 font-medium">Instant results</span>
+											<span class="text-xs text-slate-400 font-medium">Instant results</span>
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- Subtle bottom accent -->
 								<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-b-3xl"></div>
 							</div>
@@ -316,36 +311,36 @@
 			<section class="pb-24 px-6">
 				<div class="container mx-auto">
 					<div class="max-w-6xl mx-auto mb-24">
-						<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-16 text-center">
+						<h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center">
 							Powerful insights at a glance
 						</h2>
 						<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-							<div class="group text-center p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-red-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+							<div class="group text-center p-8 rounded-2xl border border-white/10 bg-slate-900/70 hover:border-white/20 backdrop-blur transition-all duration-300 hover:-translate-y-1">
+								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-red-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
 									<div class="w-8 h-8 rounded-full bg-red-500"></div>
 								</div>
-								<h3 class="text-lg font-semibold text-gray-900 mb-4">Hotspot Heatmaps</h3>
-								<p class="text-gray-600 text-sm leading-relaxed">
+								<h3 class="text-lg font-semibold text-white mb-4">Hotspot Heatmaps</h3>
+								<p class="text-slate-300 text-sm leading-relaxed">
 									Files touched 50+ times, God classes, circular dependencies, refactor candidates
 								</p>
 							</div>
 
-							<div class="group text-center p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+							<div class="group text-center p-8 rounded-2xl border border-white/10 bg-slate-900/70 hover:border-white/20 backdrop-blur transition-all duration-300 hover:-translate-y-1">
+								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
 									<div class="w-8 h-8 rounded-full bg-blue-500"></div>
 								</div>
-								<h3 class="text-lg font-semibold text-gray-900 mb-4">Context Switching Tax</h3>
-								<p class="text-gray-600 text-sm leading-relaxed">
+								<h3 class="text-lg font-semibold text-white mb-4">Context Switching Tax</h3>
+								<p class="text-slate-300 text-sm leading-relaxed">
 									PR review lag, knowledge silos, commit timing patterns, productivity gaps
 								</p>
 							</div>
 
-							<div class="group text-center p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+							<div class="group text-center p-8 rounded-2xl border border-white/10 bg-slate-900/70 hover:border-white/20 backdrop-blur transition-all duration-300 hover:-translate-y-1">
+								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
 									<div class="w-8 h-8 rounded-full bg-purple-500"></div>
 								</div>
-								<h3 class="text-lg font-semibold text-gray-900 mb-4">Conway's Law Violations</h3>
-								<p class="text-gray-600 text-sm leading-relaxed">
+								<h3 class="text-lg font-semibold text-white mb-4">Conway's Law Violations</h3>
+								<p class="text-slate-300 text-sm leading-relaxed">
 									Team ownership overlaps, merge conflict hotspots, architectural boundaries drift
 								</p>
 							</div>
@@ -354,7 +349,7 @@
 
 					<!-- Quick Start Guide -->
 					<div class="max-w-5xl mx-auto">
-						<div class="bg-white rounded-3xl p-12 border border-gray-200">
+						<div class="bg-slate-900/70 rounded-3xl p-12 border border-white/10 backdrop-blur">
 							<div class="text-center mb-12">
 								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-500 flex items-center justify-center">
 									<div class="w-6 h-6 rounded-md bg-white"></div>

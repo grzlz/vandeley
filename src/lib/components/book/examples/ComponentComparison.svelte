@@ -161,7 +161,7 @@ function handleClick() {
     email: 'jane@example.com',
     phone: '+1 (555) 123-4567',
     role: 'admin',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=150&h=150&fit=crop&crop=face'
+    avatar: 'https://upload.wikimedia.org/wikipedia/en/d/d1/Melora_Hardin_as_Jan_Levinson.png'
   };
 
   const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -265,23 +265,23 @@ function handleClick() {
 <div class="component-comparison space-y-8">
   <div class="space-y-6">
     <div class="space-y-3">
-      <span class="text-xs font-semibold uppercase tracking-[0.35em] text-blue-600">Live comparison</span>
-      <h3 class="text-2xl font-semibold text-gray-900">Good architecture feels different in use</h3>
-      <p class="max-w-3xl text-sm text-gray-600 md:text-base">
+      <span class="text-xs font-semibold uppercase tracking-[0.35em] text-blue-400">Live comparison</span>
+      <h3 class="text-2xl font-semibold text-slate-100">Good architecture feels different in use</h3>
+      <p class="max-w-3xl text-sm text-slate-300 md:text-base">
         The same requirement implemented two ways. Switch between them to feel how API design, composition, and extensibility
         change the developer experience.
       </p>
     </div>
 
     <div class="flex items-center gap-4">
-      <div class="inline-flex w-fit items-center gap-2 rounded-full bg-gray-100 p-1 shadow-inner">
+      <div class="inline-flex w-fit items-center gap-2 rounded-full bg-slate-800 p-1 shadow-inner">
         {#each demoList as demo}
           <button
             type="button"
             class={
               selectedDemo === demo.id
-                ? 'inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow apple-transition'
-                : 'inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-gray-600 hover:text-gray-900 apple-transition'
+                ? 'inline-flex items-center gap-2 rounded-full bg-slate-700 px-4 py-2 text-sm font-medium text-white shadow apple-transition'
+                : 'inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-400 hover:text-slate-200 apple-transition'
             }
             aria-pressed={selectedDemo === demo.id}
             onclick={() => selectDemo(demo.id)}
@@ -296,8 +296,8 @@ function handleClick() {
         type="button"
         class={
           showCode
-            ? 'inline-flex items-center gap-2 rounded-lg bg-blue-100 px-3 py-2 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-200'
-            : 'inline-flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-200'
+            ? 'inline-flex items-center gap-2 rounded-lg bg-blue-500/20 px-3 py-2 text-sm font-medium text-blue-300 transition-colors hover:bg-blue-500/30'
+            : 'inline-flex items-center gap-2 rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-400 transition-colors hover:bg-slate-700'
         }
         onclick={toggleCode}
         aria-pressed={showCode}
@@ -313,15 +313,15 @@ function handleClick() {
   <div
     class={
       selectedDemo === 'bad'
-        ? 'rounded-2xl border border-red-200 bg-red-50 p-6 shadow-sm'
-        : 'rounded-2xl border border-green-200 bg-green-50 p-6 shadow-sm'
+        ? 'rounded-2xl border border-red-400/30 bg-red-500/10 p-6 backdrop-blur'
+        : 'rounded-2xl border border-green-400/30 bg-green-500/10 p-6 backdrop-blur'
     }
   >
-    <h4 class={selectedDemo === 'bad' ? 'text-red-800 font-semibold mb-3' : 'text-green-800 font-semibold mb-3'}>
+    <h4 class={selectedDemo === 'bad' ? 'text-red-300 font-semibold mb-3' : 'text-green-300 font-semibold mb-3'}>
       {activeDemo.label} patterns
     </h4>
-    <p class="mb-4 max-w-3xl text-sm text-gray-700 md:text-base">{activeDemo.summary}</p>
-    <ul class={selectedDemo === 'bad' ? 'space-y-2 text-sm text-red-700 md:text-base' : 'space-y-2 text-sm text-green-700 md:text-base'}>
+    <p class="mb-4 max-w-3xl text-sm text-slate-300 md:text-base">{activeDemo.summary}</p>
+    <ul class={selectedDemo === 'bad' ? 'space-y-2 text-sm text-red-200 md:text-base' : 'space-y-2 text-sm text-green-200 md:text-base'}>
       {#each activeDemo.points as point}
         <li class="flex gap-2">
           <span>{selectedDemo === 'bad' ? '⚠️' : '✨'}</span>
@@ -332,40 +332,40 @@ function handleClick() {
   </div>
 
   {#if showCode}
-    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+    <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur">
       <div class="mb-4 flex items-center justify-between">
-        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">Source code</h5>
+        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">Source code</h5>
         <span
           class={
             selectedDemo === 'bad'
-              ? 'rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-700'
-              : 'rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700'
+              ? 'rounded-full bg-red-500/20 px-3 py-1 text-xs font-medium text-red-300'
+              : 'rounded-full bg-green-500/20 px-3 py-1 text-xs font-medium text-green-300'
           }
         >
           {activeDemo.label}
         </span>
       </div>
       <div class="overflow-x-auto">
-        <pre class="rounded-xl bg-gray-900 p-4 text-sm text-gray-100 overflow-x-auto"><code>{activeDemo.code}</code></pre>
+        <pre class="rounded-xl bg-slate-800 p-4 text-sm text-slate-200 overflow-x-auto"><code>{activeDemo.code}</code></pre>
       </div>
     </div>
   {/if}
 
   <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+    <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur">
       <div class="mb-4 flex items-center justify-between">
-        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">Example component</h5>
+        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">Example component</h5>
         <span
           class={
             selectedDemo === 'bad'
-              ? 'rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-700'
-              : 'rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700'
+              ? 'rounded-full bg-red-500/20 px-3 py-1 text-xs font-medium text-red-300'
+              : 'rounded-full bg-green-500/20 px-3 py-1 text-xs font-medium text-green-300'
           }
         >
           {activeDemo.label}
         </span>
       </div>
-      <div class="rounded-xl border border-dashed border-gray-200 bg-gray-50 p-6">
+      <div class="rounded-xl border border-dashed border-white/20 bg-slate-800/50 p-6">
         {#if selectedDemo === 'bad'}
           <BadComponent
             userType="admin"
@@ -400,9 +400,9 @@ function handleClick() {
       </div>
     </div>
     <div class="space-y-4">
-      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">Architecture metrics</h5>
-        <p class="mt-2 text-sm text-gray-600">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur">
+        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">Architecture metrics</h5>
+        <p class="mt-2 text-sm text-slate-300">
           Compare how each version feels when you integrate it into a real screen and maintain it over time.
         </p>
         <div class="mt-5 grid gap-4">
@@ -410,28 +410,28 @@ function handleClick() {
             <div
               class={
                 selectedDemo === 'bad'
-                  ? 'rounded-xl border border-red-100 bg-red-50 p-4'
-                  : 'rounded-xl border border-green-100 bg-green-50 p-4'
+                  ? 'rounded-xl border border-red-400/30 bg-red-500/10 p-4'
+                  : 'rounded-xl border border-green-400/30 bg-green-500/10 p-4'
               }
             >
-              <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">{metric.label}</div>
+              <div class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{metric.label}</div>
               <div
                 class={
                   selectedDemo === 'bad'
-                    ? 'mt-1 text-base font-semibold text-red-700'
-                    : 'mt-1 text-base font-semibold text-green-700'
+                    ? 'mt-1 text-base font-semibold text-red-300'
+                    : 'mt-1 text-base font-semibold text-green-300'
                 }
               >
                 {metric.value}
               </div>
-              <p class="mt-1 text-sm text-gray-600">{metric.helper}</p>
+              <p class="mt-1 text-sm text-slate-300">{metric.helper}</p>
             </div>
           {/each}
         </div>
       </div>
-      <div class="rounded-2xl border border-blue-100 bg-blue-50 p-6 shadow-inner">
-        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-blue-900">What to try next</h5>
-        <p class="mt-2 text-sm text-blue-900/80">
+      <div class="rounded-2xl border border-blue-400/30 bg-blue-500/10 p-6 backdrop-blur">
+        <h5 class="text-xs font-semibold uppercase tracking-[0.25em] text-blue-300">What to try next</h5>
+        <p class="mt-2 text-sm text-blue-200">
           Inspect the props available on each component and imagine how you would add a "Suspend user" action. The well-architected
           version gives you extension points without modifying the base component.
         </p>
