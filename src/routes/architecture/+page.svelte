@@ -105,10 +105,10 @@
 	<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
 		<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 			<a href="/" class="flex items-center gap-4 hover:opacity-80 transition">
-				<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
-				<div class="text-sm">
-					<div class="text-base font-semibold tracking-tight text-white">vandeley.art</div>
-					<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase">
+				<img src="/logo.png" alt="Vandeley Logo" class="h-12 w-12 object-contain" />
+				<div class="flex flex-col">
+					<div class="text-base font-semibold tracking-tight text-white whitespace-nowrap">vandeley.art</div>
+					<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase whitespace-nowrap">
 						Git Analytics
 					</div>
 				</div>
@@ -117,11 +117,11 @@
 			<div class="flex items-center gap-4 text-sm font-medium">
 				<a
 					href="/"
-					class="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white"
+					class="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white whitespace-nowrap"
 				>
 					Analytics Home
 				</a>
-				<span class="rounded-full bg-white px-4 py-2 text-slate-900 shadow-sm"
+				<span class="rounded-full bg-white px-4 py-2 text-slate-900 shadow-sm whitespace-nowrap"
 					>Architecture Hub</span
 				>
 			</div>

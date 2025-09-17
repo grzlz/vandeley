@@ -1,18 +1,22 @@
 <script>
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.png';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 
 	let { children } = $props();
+
+	injectAnalytics()
+	
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 
 	<!-- Open Graph Meta Tags -->
-	<meta property="og:title" content="vandeley.art - Software Architect as a Service" />
+	<meta property="og:title" content="Your software architect, importer-exporter" />
 	<meta
 		property="og:description"
-		content="Transform your git history into actionable architectural insights. Advanced analytics for software architects scaling from MVP to enterprise."
+		content="Transform your git history into actionable architectural insights. Import git log, export insights."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://vandeley.art" />
