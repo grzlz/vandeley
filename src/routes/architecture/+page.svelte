@@ -3,12 +3,10 @@
 	import Card from '$lib/components/ui/Card.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
-	// Navigate to the book
 	function startReading() {
 		goto('/book/chapter-1');
 	}
 
-	// Architecture learning resources
 	const learningPaths = [
 		{
 			title: 'Component Architecture',
@@ -47,7 +45,7 @@
 		{
 			title: 'Clean Architecture',
 			authors: 'Robert C. Martin',
-			description: 'A craftsman\'s guide to software structure and design',
+			description: "A craftsman's guide to software structure and design",
 			rating: 4.3,
 			practical: true
 		},
@@ -59,168 +57,338 @@
 			practical: false
 		}
 	];
+
+	const heroHighlights = [
+		{
+			title: 'Interactive chapters',
+			description: 'Work through guided architecture scenarios with runnable Svelte code.',
+			icon: '🎯'
+		},
+		{
+			title: 'Real-world patterns',
+			description: 'Translate proven architecture practices into component-driven UI systems.',
+			icon: '🧠'
+		},
+		{
+			title: 'Applied assessments',
+			description: 'Score your architecture decisions with structured review checklists.',
+			icon: '📈'
+		}
+	];
+
+	function scrollToPaths() {
+		if (typeof document === 'undefined') return;
+
+		const section = document.getElementById('learning-paths');
+		section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
 </script>
 
 <svelte:head>
 	<title>Architecture Learning Hub | Vandeley Analytics</title>
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-	<div class="container mx-auto px-4 py-12">
-		<div class="max-w-6xl mx-auto">
-			<!-- Header -->
-			<header class="text-center mb-12">
-				<h1 class="text-4xl font-bold text-gray-900 mb-4">
-					Software Architecture Learning Hub
-				</h1>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Master the principles of software architecture through practical Svelte examples and proven patterns.
-					Transform your development skills with hands-on learning.
-				</p>
-			</header>
-
-			<!-- Interactive Book Section -->
-			<section class="mb-16">
-				<Card variant="elevated" shadow="lg" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-					<div class="text-center py-12">
-						<div class="text-6xl mb-6">📚</div>
-						<h2 class="text-3xl font-bold mb-4">
-							Building Well-Architected Svelte Applications
-						</h2>
-						<p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-							A comprehensive, interactive guide to component architecture, design patterns,
-							and best practices. Learn by reading and building.
-						</p>
-						<Button
-							variant="secondary"
-							size="lg"
-							onclick={startReading}
-							class="bg-white text-blue-600 hover:bg-blue-50"
-						>
-							Start Reading - Chapter 1: Component Architecture
-						</Button>
-						<div class="mt-4 text-blue-200 text-sm">
-							Free • Interactive Examples • 3 Chapters
-						</div>
-					</div>
-				</Card>
-			</section>
-
-			<!-- Learning Paths -->
-			<section class="mb-16">
-				<h2 class="text-2xl font-bold text-gray-900 mb-8">Learning Paths</h2>
-				<div class="grid md:grid-cols-3 gap-6">
-					{#each learningPaths as path}
-						<Card
-							variant="default"
-							shadow="sm"
-							hover={!path.disabled}
-							onclick={path.disabled ? undefined : path.action}
-							class={path.disabled ? 'opacity-60' : ''}
-						>
-							<div class="text-center">
-								<div class="text-4xl mb-4">{path.icon}</div>
-								<h3 class="text-xl font-semibold text-gray-900 mb-2">{path.title}</h3>
-								<p class="text-gray-600 mb-4">{path.description}</p>
-
-								<!-- Progress Bar -->
-								<div class="mb-4">
-									<div class="flex justify-between text-sm text-gray-500 mb-1">
-										<span>Progress</span>
-										<span>{path.progress}/{path.chapters} chapters</span>
-									</div>
-									<div class="w-full bg-gray-200 rounded-full h-2">
-										<div
-											class="bg-blue-500 h-2 rounded-full transition-all duration-300"
-											style="width: {(path.progress / path.chapters) * 100}%"
-										></div>
-									</div>
-								</div>
-
-								{#if path.disabled}
-									<div class="text-sm text-gray-500 italic">Coming Soon</div>
-								{:else}
-									<Button variant="primary" size="sm" onclick={path.action}>
-										{path.progress === 0 ? 'Start Learning' : 'Continue'}
-									</Button>
-								{/if}
-							</div>
-						</Card>
-					{/each}
-				</div>
-			</section>
-
-			<!-- Recommended Books -->
-			<section class="mb-16">
-				<h2 class="text-2xl font-bold text-gray-900 mb-8">Recommended Architecture Books</h2>
-				<div class="grid md:grid-cols-3 gap-6">
-					{#each architectureBooks as book}
-						<Card variant="default" shadow="sm">
-							<div class="mb-4">
-								<h3 class="font-semibold text-gray-900 mb-1">{book.title}</h3>
-								<p class="text-sm text-gray-600 mb-2">by {book.authors}</p>
-
-								<!-- Rating -->
-								<div class="flex items-center gap-2 mb-3">
-									<div class="flex">
-										{#each Array(5) as _, i}
-											<span class="text-yellow-400">
-												{i < Math.floor(book.rating) ? '★' : '☆'}
-											</span>
-										{/each}
-									</div>
-									<span class="text-sm text-gray-600">{book.rating}</span>
-									{#if book.practical}
-										<span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
-											Practical
-										</span>
-									{/if}
-								</div>
-							</div>
-
-							<p class="text-sm text-gray-700">{book.description}</p>
-						</Card>
-					{/each}
-				</div>
-			</section>
-
-			<!-- Quick Access -->
-			<section>
-				<h2 class="text-2xl font-bold text-gray-900 mb-8">Quick Access</h2>
-				<div class="grid md:grid-cols-2 gap-6">
-					<Card variant="default" shadow="sm">
-						<div class="text-center">
-							<div class="text-3xl mb-4">🧩</div>
-							<h3 class="text-lg font-semibold text-gray-900 mb-2">Component Library</h3>
-							<p class="text-gray-600 mb-4">
-								Explore our collection of well-architected Svelte components with live examples.
-							</p>
-							<Button
-								variant="secondary"
-								onclick={() => goto('/architecture/components')}
-							>
-								View Components
-							</Button>
-						</div>
-					</Card>
-
-					<Card variant="default" shadow="sm">
-						<div class="text-center">
-							<div class="text-3xl mb-4">📊</div>
-							<h3 class="text-lg font-semibold text-gray-900 mb-2">Architecture Analysis</h3>
-							<p class="text-gray-600 mb-4">
-								Analyze your git repository for architectural insights and patterns.
-							</p>
-							<Button
-								variant="secondary"
-								onclick={() => goto('/')}
-							>
-								Analyze Repository
-							</Button>
-						</div>
-					</Card>
-				</div>
-			</section>
-		</div>
+<main class="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+	<div class="pointer-events-none absolute inset-0 -z-10 bg-slate-950">
+		<div class="absolute -top-32 -left-32 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl"></div>
+		<div
+			class="absolute top-1/3 right-[-8rem] h-96 w-96 rounded-full bg-indigo-500/25 blur-[140px]"
+		></div>
+		<div
+			class="absolute bottom-[-10rem] left-1/3 h-[26rem] w-[26rem] rounded-full bg-purple-600/20 blur-[160px]"
+		></div>
 	</div>
-</div>
+
+	<nav class="relative z-20 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
+		<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+			<div class="flex items-center gap-4">
+				<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
+				<div class="text-sm">
+					<div class="text-base font-semibold tracking-tight text-white">vandeley.art</div>
+					<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase">
+						Git Analytics
+					</div>
+				</div>
+			</div>
+
+			<div class="flex items-center gap-4 text-sm font-medium">
+				<a
+					href="/"
+					class="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white"
+				>
+					Analytics Home
+				</a>
+				<span class="rounded-full bg-white px-4 py-2 text-slate-900 shadow-sm"
+					>Architecture Hub</span
+				>
+			</div>
+		</div>
+	</nav>
+
+	<section class="relative z-10 py-24">
+		<div class="mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+			<div class="space-y-10">
+				<div
+					class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-blue-100/90"
+				>
+					<span class="h-2 w-2 rounded-full bg-blue-300"></span>
+					Software Architecture Program
+				</div>
+
+				<div class="space-y-6">
+					<h1 class="text-4xl font-bold tracking-tight text-white md:text-6xl">
+						Build well-architected Svelte systems with confidence
+					</h1>
+					<p class="max-w-2xl text-lg leading-relaxed text-slate-200">
+						Dive into an immersive learning experience that blends interactive chapters,
+						architectural frameworks, and expert commentary. Develop intuition for designing
+						resilient, scalable applications.
+					</p>
+				</div>
+
+				<div class="flex flex-wrap items-center gap-4">
+					<Button
+						variant="primary"
+						size="lg"
+						onclick={startReading}
+						class="px-8 py-3 text-base font-semibold shadow-lg shadow-blue-500/30 hover:bg-blue-400 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+					>
+						Start the interactive book
+					</Button>
+					<button
+						type="button"
+						class="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition duration-200 hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-slate-950 focus:outline-none"
+						onclick={scrollToPaths}
+					>
+						Explore learning paths
+						<span aria-hidden="true">→</span>
+					</button>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-3">
+					{#each heroHighlights as highlight}
+						<div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+							<div class="text-2xl">{highlight.icon}</div>
+							<h3 class="mt-3 text-base font-semibold text-white">{highlight.title}</h3>
+							<p class="mt-2 text-sm text-slate-200/80">{highlight.description}</p>
+						</div>
+					{/each}
+				</div>
+			</div>
+
+			<Card
+				variant="elevated"
+				shadow="xl"
+				class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 px-8 py-10 text-left text-white"
+			>
+				<div
+					class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.28),_transparent_60%)] opacity-60"
+				></div>
+				<div class="relative space-y-6">
+					<div
+						class="inline-flex items-center gap-3 rounded-full bg-white/15 px-4 py-2 text-sm font-medium"
+					>
+						<span class="text-xl">📚</span>
+						Guided chapter series
+					</div>
+					<h2 class="text-3xl leading-tight font-semibold">
+						Building Well-Architected Svelte Applications
+					</h2>
+					<p class="text-base text-white/85">
+						A comprehensive, interactive guide to component architecture, design patterns, and best
+						practices. Learn by reading and building.
+					</p>
+					<ul class="space-y-3 text-sm text-white/80">
+						<li class="flex items-start gap-3">
+							<span class="mt-1 h-1.5 w-1.5 rounded-full bg-white"></span>
+							Component-driven patterns for scalable UI systems.
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="mt-1 h-1.5 w-1.5 rounded-full bg-white"></span>
+							Architectural decision frameworks with real project examples.
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="mt-1 h-1.5 w-1.5 rounded-full bg-white"></span>
+							Downloadable checklists and interactive sandboxes.
+						</li>
+					</ul>
+					<Button
+						variant="secondary"
+						size="lg"
+						onclick={startReading}
+						class="bg-white px-6 py-3 text-base font-semibold text-blue-600 hover:bg-blue-50 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-slate-950"
+					>
+						Start Chapter 1
+					</Button>
+					<div class="text-sm text-white/70">Free • Interactive examples • 3 chapters</div>
+				</div>
+			</Card>
+		</div>
+	</section>
+
+	<section id="learning-paths" class="relative z-10 border-t border-white/5 bg-slate-950/40 py-20">
+		<div class="mx-auto max-w-6xl px-6">
+                        <div class="flex flex-col gap-4 pb-10 sm:flex-row sm:items-end sm:justify-between">
+                                <div>
+                                        <span class="text-sm font-semibold tracking-[0.35em] text-blue-200/80 uppercase"
+                                                >Structured Curriculum</span
+                                        >
+                                        <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                                                Learning paths for modern architecture practice
+                                        </h2>
+                                </div>
+                                <p class="max-w-xl text-sm leading-relaxed text-slate-200/90">
+                                        Chart a deliberate journey from foundational component patterns to high-impact systems
+                                        thinking. Each path layers guidance, exercises, and self-assessment to sharpen your craft.
+                                </p>
+                        </div>
+
+			<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+				{#each learningPaths as path}
+					<Card
+						variant="elevated"
+						shadow="lg"
+						hover={!path.disabled}
+                                                class={`group relative h-full overflow-hidden border border-white/10 bg-slate-950/60 px-7 py-8 text-left transition-colors duration-300 ${
+                                                        path.disabled
+                                                                ? 'opacity-60 saturate-90'
+                                                                : 'hover:border-white/20 hover:bg-slate-900/80'
+                                                }`}
+                                        >
+                                                <div class="flex h-full flex-col gap-6">
+                                                        <div class="flex items-start justify-between gap-4">
+                                                                <div class="flex items-start gap-4">
+                                                                        <div
+                                                                                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/25 text-3xl text-blue-100"
+                                                                        >
+                                                                                {path.icon}
+                                                                        </div>
+                                                                        <div>
+                                                                                <h3 class="text-xl font-semibold text-white">{path.title}</h3>
+                                                                                <p class="mt-1 text-sm text-slate-200/90">{path.description}</p>
+                                                                        </div>
+                                                                </div>
+                                                                {#if path.disabled}
+                                                                        <span
+                                                                                class="rounded-full bg-white/5 px-3 py-1 text-xs font-medium tracking-[0.2em] text-slate-200/70 uppercase"
+                                                                        >
+                                                                                Soon
+                                                                        </span>
+                                                                {:else}
+                                                                        <span
+                                                                                class="rounded-full bg-blue-500/30 px-3 py-1 text-xs font-medium tracking-[0.2em] text-blue-100 uppercase"
+                                                                        >
+                                                                                Active
+                                                                        </span>
+                                                                {/if}
+                                                        </div>
+
+                                                        <div>
+                                                                <div class="mb-2 flex items-center justify-between text-xs text-slate-200/80">
+                                                                        <span>Progress</span>
+                                                                        <span>{path.progress}/{path.chapters} chapters</span>
+                                                                </div>
+                                                                <div class="h-2 w-full overflow-hidden rounded-full bg-white/15">
+                                                                        <div
+                                                                                class="h-full rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 transition-all duration-300"
+                                                                                style={`width: ${(path.progress / path.chapters) * 100}%`}
+                                                                        ></div>
+                                                                </div>
+                                                        </div>
+
+                                                        {#if path.disabled}
+                                                                <p class="text-sm leading-relaxed text-slate-300/80">
+                                                                        Get notified when this path goes live with deep dives and hands-on labs.
+                                                                </p>
+                                                        {:else}
+                                                                <p class="text-sm leading-relaxed text-slate-200/90">
+                                                                        Jump back into your workbook to continue building architectural instincts and
+                                                                        patterns.
+                                                                </p>
+                                                        {/if}
+
+                                                        <div class="mt-auto">
+                                                                {#if path.disabled}
+                                                                        <div class="text-xs font-medium tracking-[0.4em] text-slate-300/70 uppercase">
+                                                                                In development
+                                                                        </div>
+                                                                {:else}
+                                                                        <Button
+                                                                                variant="secondary"
+                                                                                size="sm"
+                                                                                onclick={path.action}
+                                                                                class="bg-blue-500/30 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-blue-50 uppercase hover:bg-blue-500/40 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                                                                        >
+                                                                                {path.progress === 0 ? 'Start learning' : 'Continue'}
+                                                                        </Button>
+                                                                {/if}
+                                                        </div>
+						</div>
+					</Card>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+        <section class="relative z-10 border-t border-white/5 bg-slate-950/50 py-20">
+		<div class="mx-auto max-w-6xl px-6">
+                        <div class="flex flex-col gap-4 pb-10 sm:flex-row sm:items-end sm:justify-between">
+                                <div>
+                                        <span class="text-sm font-semibold tracking-[0.35em] text-blue-200/80 uppercase"
+                                                >Deep Dives</span
+                                        >
+                                        <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                                                Recommended architecture books
+                                        </h2>
+                                </div>
+                                <p class="max-w-xl text-sm leading-relaxed text-slate-200/90">
+                                        Curated reading to complement your practice. These titles pair conceptual clarity with
+                                        practical guidance for evolving software systems.
+                                </p>
+                        </div>
+
+			<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+				{#each architectureBooks as book}
+                                        <Card
+                                                variant="glass"
+                                                shadow="lg"
+                                                class="h-full border border-white/10 bg-slate-950/60 px-7 py-8 text-left text-slate-100 backdrop-blur"
+                                        >
+                                                <div class="flex h-full flex-col gap-5">
+                                                        <div>
+                                                                <h3 class="text-xl font-semibold text-white">{book.title}</h3>
+                                                                <p class="mt-1 text-sm font-medium text-slate-200/80">by {book.authors}</p>
+                                                        </div>
+
+                                                        <p class="text-sm leading-relaxed text-slate-200/85">{book.description}</p>
+
+                                                        <div class="mt-auto flex items-center justify-between pt-4 text-sm text-slate-200/80">
+                                                                <div class="flex items-center gap-2">
+                                                                        <div class="flex text-lg text-amber-400">
+                                                                                {#each Array(5) as _, i}
+                                                                                        <span>{i < Math.floor(book.rating) ? '★' : '☆'}</span>
+                                                                                {/each}
+                                                                        </div>
+                                                                        <span class="font-medium text-slate-100">{book.rating.toFixed(1)}</span>
+                                                                </div>
+                                                                {#if book.practical}
+                                                                        <span
+                                                                                class="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-100"
+                                                                        >
+                                                                                Practical playbook
+                                                                        </span>
+                                                                {:else}
+                                                                        <span
+                                                                                class="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-100"
+                                                                        >
+                                                                                Strategic insights
+                                                                        </span>
+                                                                {/if}
+                                                        </div>
+						</div>
+					</Card>
+				{/each}
+			</div>
+		</div>
+	</section>
+</main>
