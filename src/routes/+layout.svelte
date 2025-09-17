@@ -20,7 +20,7 @@
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://vandeley.art" />
-	<meta property="og:image" content="https://www.vandeley.art/screenshot.png" />
+	<meta property="og:image" content="https://vandeley.art/screenshot.png" />
 	<meta property="og:image:alt" content="Vandeley Analytics - Git History Analysis Dashboard" />
 	<meta property="og:site_name" content="vandeley.art" />
 
@@ -31,7 +31,7 @@
 		name="twitter:description"
 		content="Transform your git history into actionable architectural insights. Advanced analytics for software architects."
 	/>
-	<meta name="twitter:image" content="https://www.vandeley.art/screenshot_tw.png" />
+	<meta name="twitter:image" content="https://vandeley.art/screenshot_tw.png" />
 	<meta name="twitter:image:alt" content="Vandeley Analytics - Git History Analysis Dashboard" />
 
 	<!-- Standard Meta Tags -->
