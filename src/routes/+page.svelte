@@ -116,27 +116,27 @@
 	}
 </script>
 
-<main class="min-h-screen bg-slate-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif] antialiased">
+<main class="min-h-screen bg-slate-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif] antialiased overflow-x-hidden">
 	{#if showLandingPage}
 		<!-- Apple-Inspired Landing Page -->
 		<div class="relative">
 			<!-- Clean Navigation -->
 			<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
 				<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-					<div class="flex items-center gap-4">
-						<img src="/logo.png" alt="Vandeley Logo" class="h-8 w-8" />
-						<div class="text-sm">
-							<div class="text-base font-semibold tracking-tight text-white">vandeley.art</div>
-							<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase">
+					<a href="/" class="flex items-center gap-4 hover:opacity-80 transition">
+						<img src="/logo.png" alt="Vandeley Logo" class="h-12 w-12 object-contain" />
+						<div class="flex flex-col">
+							<div class="text-base font-semibold tracking-tight text-white whitespace-nowrap">vandeley.art</div>
+							<div class="text-[0.65rem] font-medium tracking-[0.4em] text-slate-300 uppercase whitespace-nowrap">
 								Git Analytics
 							</div>
 						</div>
-					</div>
+					</a>
 
 					<div class="flex items-center gap-4 text-sm font-medium">
 						<a
 							href="/architecture"
-							class="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white"
+							class="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-white/30 hover:text-white whitespace-nowrap"
 						>
 							<span class="text-lg">📚</span>
 							Learn Architecture
@@ -149,9 +149,9 @@
 			<section class="pt-32 pb-16 px-6">
 				<div class="container mx-auto">
 					<!-- Hero + Demo Layout -->
-					<div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center mb-16">
-						<!-- Hero Content - Left Side (2/3) -->
-						<div class="lg:col-span-2">
+					<div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center mb-16">
+						<!-- Hero Content - Left Side (3/5) -->
+						<div class="lg:col-span-3">
 							<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[0.9]">
 								Transform git history into
 								<span class="text-blue-400">architectural insights</span>
@@ -162,83 +162,90 @@
 							</p>
 						</div>
 
-						<!-- Interactive Demo Playground - Right Side (1/3) -->
-						<div class="lg:col-span-1">
-							<div class="bg-slate-900/70 rounded-3xl p-8 border border-white/10 backdrop-blur hover:bg-slate-900/90 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-								<!-- Subtle background pattern -->
-								<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 pointer-events-none"></div>
+						<!-- Interactive Demo Playground - Right Side (2/5) -->
+						<div class="lg:col-span-2">
+							<div class="relative bg-slate-900/30 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:bg-slate-900/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+								<!-- Glassy background layers -->
+								<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/10"></div>
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
 
-								<!-- Demo header with enhanced visual hierarchy -->
-								<div class="relative z-10 text-center mb-8">
-									<div class="relative mb-6">
+								<!-- Subtle animated glow -->
+								<div class="absolute -top-10 -right-10 w-20 h-20 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div>
+								<div class="absolute -bottom-10 -left-10 w-20 h-20 bg-purple-500/20 rounded-full blur-2xl animate-pulse" style="animation-delay: 1.5s;"></div>
+
+								<!-- Demo header with horizontal layout -->
+								<div class="relative z-10 flex items-center gap-4 mb-6">
+									<div class="relative flex-shrink-0">
 										<!-- Animated background glow -->
-										<div class="absolute inset-0 w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-xl animate-pulse"></div>
-										<!-- Icon container with gradient -->
-										<div class="relative w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
-											<div class="w-10 h-10 rounded-2xl bg-white/90 flex items-center justify-center">
-												<span class="text-blue-600 text-xl font-bold">⚡</span>
-											</div>
+										<div class="absolute inset-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-xl animate-pulse"></div>
+										<!-- Icon container with glassy effect -->
+										<div class="relative w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center shadow-lg">
+											<span class="text-blue-400 text-2xl font-bold filter drop-shadow-lg">⚡</span>
 										</div>
 									</div>
 
-									<div class="space-y-3">
-										<h3 class="text-2xl font-bold text-white tracking-tight">
-											Live Demo
+									<div class="flex-1 min-w-0">
+										<h3 class="text-xl font-bold text-white tracking-tight mb-2">
+											Try it out
 										</h3>
-										<p class="text-base text-slate-300 font-medium leading-relaxed">
+										<p class="text-sm text-slate-300 font-medium leading-relaxed mb-3">
 											Upload your git log and watch your codebase come alive
 										</p>
-										<div class="flex items-center justify-center gap-2 text-sm text-slate-400">
-											<div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-											<span>Real-time analysis</span>
-											<div class="w-1 h-1 rounded-full bg-slate-500"></div>
-											<span>Privacy-first</span>
+										<div class="flex items-center gap-3 text-xs text-slate-400">
+											<div class="flex items-center gap-1">
+												<div class="w-1.5 h-1.5 rounded-full bg-green-400 shadow-sm shadow-green-400/50"></div>
+												<span>Runs locally</span>
+											</div>
+											<div class="flex items-center gap-1">
+												<div class="w-1.5 h-1.5 rounded-full bg-blue-400 shadow-sm shadow-blue-400/50"></div>
+												<span>No servers</span>
+											</div>
 										</div>
 									</div>
 								</div>
 								
 								<!-- Enhanced file upload area -->
-								<div class="relative z-10 mb-6">
+								<div class="relative z-10 mb-4">
 									<FileUpload on:fileLoaded={handleFileLoaded} />
 								</div>
-								
+
 								<!-- Demo features preview -->
-								<div class="relative z-10 space-y-4">
-									<div class="bg-slate-800/50 rounded-2xl p-4 border border-white/10">
+								<div class="relative z-10">
+									<div class="bg-slate-800/50 rounded-2xl p-4 border border-white/10 mb-4">
 										<h4 class="font-semibold text-white text-sm mb-3">What you'll discover:</h4>
-										<div class="space-y-2">
-											<div class="flex items-center gap-3">
+										<div class="grid grid-cols-1 gap-2">
+											<div class="flex items-center gap-2">
 												<div class="w-2 h-2 rounded-full bg-red-400"></div>
-												<span class="text-sm text-slate-300">Code hotspots & technical debt</span>
+												<span class="text-xs text-slate-300">Code hotspots & technical debt</span>
 											</div>
-											<div class="flex items-center gap-3">
+											<div class="flex items-center gap-2">
 												<div class="w-2 h-2 rounded-full bg-blue-400"></div>
-												<span class="text-sm text-slate-300">Team collaboration patterns</span>
+												<span class="text-xs text-slate-300">Team collaboration patterns</span>
 											</div>
-											<div class="flex items-center gap-3">
+											<div class="flex items-center gap-2">
 												<div class="w-2 h-2 rounded-full bg-purple-400"></div>
-												<span class="text-sm text-slate-300">Architecture health score</span>
+												<span class="text-xs text-slate-300">Architecture health score</span>
 											</div>
 										</div>
 									</div>
 
 									<!-- Trust indicators -->
-									<div class="flex items-center justify-center gap-6 pt-2">
-										<div class="flex items-center gap-2">
-											<div class="w-4 h-4 rounded-full bg-green-500/20 flex items-center justify-center">
-												<div class="w-2 h-2 rounded-full bg-green-400"></div>
+									<div class="flex items-center justify-center gap-4">
+										<div class="flex items-center gap-1">
+											<div class="w-3 h-3 rounded-full bg-green-500/20 flex items-center justify-center">
+												<div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
 											</div>
 											<span class="text-xs text-slate-400 font-medium">Local only</span>
 										</div>
-										<div class="flex items-center gap-2">
-											<div class="w-4 h-4 rounded-full bg-blue-500/20 flex items-center justify-center">
-												<div class="w-2 h-2 rounded-full bg-blue-400"></div>
+										<div class="flex items-center gap-1">
+											<div class="w-3 h-3 rounded-full bg-blue-500/20 flex items-center justify-center">
+												<div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
 											</div>
 											<span class="text-xs text-slate-400 font-medium">No signup</span>
 										</div>
-										<div class="flex items-center gap-2">
-											<div class="w-4 h-4 rounded-full bg-purple-500/20 flex items-center justify-center">
-												<div class="w-2 h-2 rounded-full bg-purple-400"></div>
+										<div class="flex items-center gap-1">
+											<div class="w-3 h-3 rounded-full bg-purple-500/20 flex items-center justify-center">
+												<div class="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
 											</div>
 											<span class="text-xs text-slate-400 font-medium">Instant results</span>
 										</div>
@@ -257,40 +264,43 @@
 			<section class="pb-24 px-6">
 				<div class="container mx-auto">
 					<div class="max-w-5xl mx-auto">
-						<div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-12 text-white text-center relative overflow-hidden">
-							<!-- Background pattern -->
-							<div class="absolute inset-0 opacity-10">
-								<div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-							</div>
+						<div class="relative rounded-3xl p-12 text-center overflow-hidden border border-white/10 bg-slate-900/30 backdrop-blur-xl">
+							<!-- Glassy background layers -->
+							<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/10"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+
+							<!-- Subtle animated glow -->
+							<div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+							<div class="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
 
 							<div class="relative z-10">
-								<div class="text-5xl mb-6">📚</div>
-								<h2 class="text-3xl md:text-4xl font-bold mb-4">
+								<div class="text-5xl mb-6 filter drop-shadow-lg">📚</div>
+								<h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
 									Free Interactive Book: Building Well-Architected Svelte Apps
 								</h2>
-								<p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+								<p class="text-xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
 									Master component architecture, design patterns, and best practices with hands-on examples.
 									Learn the principles that separate good components from great ones.
 								</p>
 
 								<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-									<div class="flex items-center gap-2 text-blue-100">
-										<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+									<div class="flex items-center gap-2 text-slate-300">
+										<span class="w-2 h-2 bg-green-400 rounded-full shadow-sm shadow-green-400/50"></span>
 										<span>Interactive Examples</span>
 									</div>
-									<div class="flex items-center gap-2 text-blue-100">
-										<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+									<div class="flex items-center gap-2 text-slate-300">
+										<span class="w-2 h-2 bg-blue-400 rounded-full shadow-sm shadow-blue-400/50"></span>
 										<span>Svelte 5 Best Practices</span>
 									</div>
-									<div class="flex items-center gap-2 text-blue-100">
-										<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+									<div class="flex items-center gap-2 text-slate-300">
+										<span class="w-2 h-2 bg-purple-400 rounded-full shadow-sm shadow-purple-400/50"></span>
 										<span>100% Free</span>
 									</div>
 								</div>
 
 								<a
 									href="/architecture"
-									class="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
+									class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
 								>
 									<span>Start Reading Chapter 1</span>
 									<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,7 +308,7 @@
 									</svg>
 								</a>
 
-								<div class="mt-6 text-blue-200 text-sm">
+								<div class="mt-6 text-slate-400 text-sm">
 									Chapter 1: Component Architecture Fundamentals • 15 min read
 								</div>
 							</div>
@@ -349,34 +359,42 @@
 
 					<!-- Quick Start Guide -->
 					<div class="max-w-5xl mx-auto">
-						<div class="bg-slate-900/70 rounded-3xl p-12 border border-white/10 backdrop-blur">
-							<div class="text-center mb-12">
-								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-500 flex items-center justify-center">
-									<div class="w-6 h-6 rounded-md bg-white"></div>
+						<div class="relative bg-slate-900/30 backdrop-blur-xl rounded-3xl p-12 border border-white/10 overflow-hidden">
+							<!-- Glassy background layers -->
+							<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/10"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+
+							<!-- Subtle animated glow -->
+							<div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+							<div class="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+
+							<div class="relative z-10 text-center mb-12">
+								<div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center shadow-lg">
+									<div class="w-6 h-6 rounded-md bg-blue-400"></div>
 								</div>
-								<h2 class="text-3xl font-bold text-gray-900 mb-4">
+								<h2 class="text-3xl font-bold text-white mb-4">
 									Get started in seconds
 								</h2>
-								<p class="text-xl text-gray-600 font-light">
+								<p class="text-xl text-slate-200 font-light">
 									Generate your git log and get architectural insights in under 30 seconds
 								</p>
 							</div>
 
-							<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+							<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
 								<div class="space-y-6">
 									<div class="flex items-center gap-4 mb-6">
 										<div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-semibold">
 											1
 										</div>
-										<h3 class="text-xl font-semibold text-gray-900">Basic Analysis</h3>
+										<h3 class="text-xl font-semibold text-white">Basic Analysis</h3>
 									</div>
-									<div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 font-mono text-sm">
-										<div class="text-gray-500 mb-3"># In your project directory:</div>
-										<div class="text-gray-900">git log --stat > gitlog.txt</div>
+									<div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 font-mono text-sm overflow-x-auto">
+										<div class="text-slate-400 mb-3"># In your project directory:</div>
+										<div class="text-slate-200 whitespace-nowrap">git log --stat > gitlog.txt</div>
 									</div>
-									<div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
-										<p class="text-gray-700 text-sm">
-											<span class="font-medium text-gray-900">Perfect for:</span> Team velocity, commit patterns, file hotspots, contributor analytics
+									<div class="bg-blue-500/10 backdrop-blur-sm rounded-xl p-4 border border-blue-400/20">
+										<p class="text-slate-300 text-sm">
+											<span class="font-medium text-white">Perfect for:</span> Team velocity, commit patterns, file hotspots, contributor analytics
 										</p>
 									</div>
 								</div>
@@ -386,35 +404,35 @@
 										<div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm font-semibold">
 											2
 										</div>
-										<h3 class="text-xl font-semibold text-gray-900">Deep Architecture Analysis</h3>
+										<h3 class="text-xl font-semibold text-white">Deep Architecture Analysis</h3>
 									</div>
-									<div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 font-mono text-sm">
-										<div class="text-gray-500 mb-3"># For advanced architectural KPIs:</div>
-										<div class="text-white break-all">
+									<div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 font-mono text-sm overflow-x-auto">
+										<div class="text-slate-400 mb-3"># For advanced architectural KPIs:</div>
+										<div class="text-slate-200 whitespace-nowrap">
 											git log --stat --date=iso --pretty=fuller > detailed.txt
 										</div>
 									</div>
-									<div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
-										<p class="text-gray-700 text-sm">
-											<span class="font-medium text-gray-900">Perfect for:</span> Technical debt scoring, scaling readiness assessment, architecture health metrics
+									<div class="bg-purple-500/10 backdrop-blur-sm rounded-xl p-4 border border-purple-400/20">
+										<p class="text-slate-300 text-sm">
+											<span class="font-medium text-white">Perfect for:</span> Technical debt scoring, scaling readiness assessment, architecture health metrics
 										</p>
 									</div>
 								</div>
 							</div>
 
 							<!-- Pro Tip -->
-							<div class="mt-12 bg-gray-50 rounded-2xl p-6 border border-gray-200">
+							<div class="relative z-10 mt-12 bg-green-500/10 backdrop-blur-sm rounded-2xl p-6 border border-green-400/20">
 								<div class="flex items-start gap-4">
-									<div class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500 flex items-center justify-center mt-1">
-										<div class="w-3 h-3 rounded-sm bg-white"></div>
+									<div class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500/20 backdrop-blur-sm border border-green-400/30 flex items-center justify-center mt-1">
+										<div class="w-3 h-3 rounded-sm bg-green-400"></div>
 									</div>
 									<div>
-										<p class="text-lg font-semibold text-gray-900 mb-3">
+										<p class="text-lg font-semibold text-white mb-3">
 											Pro Tip for Software Architects:
 										</p>
-										<p class="text-gray-700 leading-relaxed">
-											Use <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">--all</code> to analyze all branches, 
-											or <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">--since="6 months ago"</code> 
+										<p class="text-slate-300 leading-relaxed">
+											Use <code class="bg-slate-800/50 border border-white/10 px-2 py-1 rounded text-sm font-mono text-slate-200 break-all">--all</code> to analyze all branches,
+											or <code class="bg-slate-800/50 border border-white/10 px-2 py-1 rounded text-sm font-mono text-slate-200 break-all">--since="6 months ago"</code>
 											to focus on recent architectural evolution patterns and trends.
 										</p>
 									</div>

@@ -92,13 +92,13 @@
 </svelte:head>
 
 <main class="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-	<div class="pointer-events-none absolute inset-0 -z-10 bg-slate-950">
+	<div class="pointer-events-none absolute inset-0 -z-10 bg-slate-950 overflow-hidden">
 		<div class="absolute -top-32 -left-32 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl"></div>
 		<div
-			class="absolute top-1/3 right-[-8rem] h-96 w-96 rounded-full bg-indigo-500/25 blur-[140px]"
+			class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-indigo-500/25 blur-[140px]"
 		></div>
 		<div
-			class="absolute bottom-[-10rem] left-1/3 h-[26rem] w-[26rem] rounded-full bg-purple-600/20 blur-[160px]"
+			class="absolute -bottom-32 left-1/3 h-[26rem] w-[26rem] rounded-full bg-purple-600/20 blur-[160px]"
 		></div>
 	</div>
 

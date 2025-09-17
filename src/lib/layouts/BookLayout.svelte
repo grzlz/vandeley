@@ -85,7 +85,7 @@
   }
 </script>
 
-<div class="min-h-screen bg-slate-950">
+<div class="min-h-screen bg-slate-950 overflow-x-hidden">
   <div class="container mx-auto px-4 py-8">
     <div class="mx-auto max-w-6xl">
       <!-- Header -->
@@ -104,8 +104,8 @@
         </div>
 
         <!-- Chapter Navigation -->
-        <nav class="rounded-xl border border-white/10 bg-slate-900/70 p-4 backdrop-blur">
-          <div class="flex items-center gap-2 overflow-x-auto">
+        <nav class="rounded-xl border border-white/10 bg-slate-900/70 p-4 backdrop-blur overflow-hidden">
+          <div class="flex items-center gap-2 overflow-x-auto scrollbar-hidden">
             {#each bookChapters as chapter, index}
               <button
                 type="button"
@@ -116,7 +116,7 @@
                 aria-disabled={chapter.disabled ? 'true' : undefined}
               >
                 <span class={topNavBadgeClasses(chapter)} aria-hidden="true">{index + 1}</span>
-                <span class="truncate">{chapter.title}</span>
+                <span class="truncate min-w-0 flex-shrink">{chapter.title}</span>
               </button>
             {/each}
           </div>
