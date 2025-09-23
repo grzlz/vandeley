@@ -20,6 +20,11 @@
       title: 'Advanced Composition',
       path: '/book/chapter-3',
       disabled: true
+    },
+    {
+      id: 'chapter-4',
+      title: 'Design Patterns: Strategy',
+      path: '/book/chapter-4'
     }
   ];
 
@@ -86,26 +91,26 @@
 </script>
 
 <div class="min-h-screen bg-slate-950 overflow-x-hidden">
-  <div class="container mx-auto px-4 py-8">
-    <div class="mx-auto max-w-6xl">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+    <div class="mx-auto max-w-7xl">
       <!-- Header -->
-      <header class="mb-8">
-        <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
-          <div>
+      <header class="mb-6 lg:mb-8">
+        <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="min-w-0">
             <p class="text-xs font-semibold uppercase tracking-[0.35em] text-blue-400">Architecture Playbook</p>
-            <h1 class="mb-2 text-3xl font-bold text-white">
+            <h1 class="mb-2 text-2xl sm:text-3xl font-bold text-white leading-tight">
               Building Well-Architected Svelte Applications
             </h1>
-            <p class="text-slate-300">A practical guide to component architecture and design patterns</p>
+            <p class="text-sm sm:text-base text-slate-300">A practical guide to component architecture and design patterns</p>
           </div>
-          <a href="/architecture" class="flex items-center gap-2 text-blue-400 transition hover:text-blue-300">
+          <a href="/architecture" class="flex items-center gap-2 text-blue-400 transition hover:text-blue-300 self-start sm:self-center">
             ← Back to Architecture Hub
           </a>
         </div>
 
         <!-- Chapter Navigation -->
-        <nav class="rounded-xl border border-white/10 bg-slate-900/70 p-4 backdrop-blur overflow-hidden">
-          <div class="flex items-center gap-2 overflow-x-auto scrollbar-hidden">
+        <nav class="rounded-xl border border-white/10 bg-slate-900/70 p-4 backdrop-blur">
+          <div class="flex items-center gap-2 overflow-x-auto scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-600 hover:scrollbar-thumb-slate-500 pb-2 -mb-2">
             {#each bookChapters as chapter, index}
               <button
                 type="button"
@@ -116,18 +121,18 @@
                 aria-disabled={chapter.disabled ? 'true' : undefined}
               >
                 <span class={topNavBadgeClasses(chapter)} aria-hidden="true">{index + 1}</span>
-                <span class="truncate min-w-0 flex-shrink">{chapter.title}</span>
+                <span class="truncate min-w-0 flex-shrink-0 max-w-[200px] sm:max-w-none">{chapter.title}</span>
               </button>
             {/each}
           </div>
         </nav>
       </header>
 
-      <div class="grid grid-cols-12 gap-8">
+      <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8">
         <!-- Table of Contents -->
-        <aside class="col-span-3">
-          <div class="sticky top-8">
-            <div class="rounded-xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur">
+        <aside class="lg:col-span-3 order-2 lg:order-1">
+          <div class="lg:sticky lg:top-8">
+            <div class="rounded-xl border border-white/10 bg-slate-900/70 p-4 lg:p-6 backdrop-blur">
               <h3 class="mb-4 font-semibold text-white">Table of Contents</h3>
               <nav class="space-y-2">
                 {#each bookChapters as chapter, index}
@@ -167,55 +172,56 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="col-span-9">
-          <article class="rounded-xl border border-white/10 bg-slate-900/70 p-8 backdrop-blur">
+        <main class="lg:col-span-9 order-1 lg:order-2 min-w-0">
+          <article class="rounded-xl border border-white/10 bg-slate-900/70 p-4 sm:p-6 lg:p-8 backdrop-blur">
             <div
-              class="prose prose-lg max-w-none prose-invert
+              class="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-invert
                 prose-headings:text-slate-100 prose-h1:text-slate-100 prose-h2:text-slate-100 prose-h3:text-slate-100
                 prose-p:text-slate-300 prose-p:leading-relaxed prose-p:!text-slate-300
                 prose-strong:text-slate-100 prose-strong:!text-slate-100
                 prose-code:bg-slate-800 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:text-slate-300
-                prose-pre:bg-slate-800 prose-pre:text-slate-300
+                prose-pre:bg-slate-800 prose-pre:text-slate-300 prose-pre:overflow-x-auto
                 prose-blockquote:border-l-blue-400 prose-blockquote:bg-blue-500/10 prose-blockquote:p-4 prose-blockquote:text-slate-300
                 prose-ul:text-slate-300 prose-ol:text-slate-300 prose-ul:!text-slate-300 prose-ol:!text-slate-300
                 prose-li:text-slate-300 prose-li:!text-slate-300
-                [&>*]:text-slate-300 [&_p]:!text-slate-300 [&_h1]:!text-slate-100 [&_h2]:!text-slate-100 [&_h3]:!text-slate-100 [&_li]:!text-slate-300"
+                [&>*]:text-slate-300 [&_p]:!text-slate-300 [&_h1]:!text-slate-100 [&_h2]:!text-slate-100 [&_h3]:!text-slate-100 [&_li]:!text-slate-300
+                [&_pre]:overflow-x-auto [&_table]:overflow-x-auto [&_table]:block [&_table]:whitespace-nowrap"
             >
               {@render children()}
             </div>
 
             <!-- Chapter Navigation -->
-            <footer class="mt-12 border-t border-white/10 pt-8">
-              <div class="flex flex-wrap items-center justify-between gap-4">
+            <footer class="mt-8 lg:mt-12 border-t border-white/10 pt-6 lg:pt-8">
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                 {#if prevChapter}
                   <button
                     type="button"
-                    class="flex items-center gap-2 rounded-xl bg-white/10 px-6 py-3 text-slate-200 transition-colors hover:bg-white/20"
+                    class="w-full sm:w-auto flex items-center gap-2 rounded-xl bg-white/10 px-4 lg:px-6 py-3 text-slate-200 transition-colors hover:bg-white/20"
                     onclick={() => navigateToChapter(prevChapter)}
                   >
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                    <div class="text-left">
+                    <div class="text-left min-w-0">
                       <div class="text-xs text-slate-400">Previous</div>
-                      <div class="font-medium text-white">{prevChapter?.title}</div>
+                      <div class="font-medium text-white truncate">{prevChapter?.title}</div>
                     </div>
                   </button>
                 {:else}
-                  <span></span>
+                  <span class="hidden sm:block"></span>
                 {/if}
 
                 {#if nextChapter && !nextChapter.disabled}
                   <button
                     type="button"
-                    class="flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-white transition-colors hover:bg-blue-600"
+                    class="w-full sm:w-auto flex items-center gap-2 rounded-xl bg-blue-500 px-4 lg:px-6 py-3 text-white transition-colors hover:bg-blue-600"
                     onclick={() => navigateToChapter(nextChapter)}
                   >
-                    <div class="text-right">
+                    <div class="text-right min-w-0 flex-1 sm:flex-initial">
                       <div class="text-xs text-blue-100">Next</div>
-                      <div class="font-medium">{nextChapter.title}</div>
+                      <div class="font-medium truncate">{nextChapter.title}</div>
                     </div>
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                   </button>
