@@ -18,8 +18,7 @@
     {
       id: 'chapter-3',
       title: 'Advanced Composition',
-      path: '/book/chapter-3',
-      disabled: true
+      path: '/book/chapter-3'
     },
     {
       id: 'chapter-4',
