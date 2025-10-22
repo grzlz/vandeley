@@ -94,6 +94,19 @@
     <div class="mx-auto max-w-7xl">
       <!-- Header -->
       <header class="mb-6 lg:mb-8">
+        <!-- Breadcrumb -->
+        <nav class="mb-4 flex items-center gap-2 text-sm text-slate-400">
+          <a href="/" class="hover:text-white transition">Home</a>
+          <span>›</span>
+          <a href="/architecture" class="hover:text-white transition">Architecture</a>
+          <span>›</span>
+          <span class="text-white">Book</span>
+          {#if currentChapter}
+            <span>›</span>
+            <span class="text-blue-400">{currentChapter.title}</span>
+          {/if}
+        </nav>
+
         <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div class="min-w-0">
             <p class="text-xs font-semibold uppercase tracking-[0.35em] text-blue-400">Architecture Playbook</p>
@@ -102,9 +115,16 @@
             </h1>
             <p class="text-sm sm:text-base text-slate-300">A practical guide to component architecture and design patterns</p>
           </div>
-          <a href="/architecture" class="flex items-center gap-2 text-blue-400 transition hover:text-blue-300 self-start sm:self-center">
-            ← Back to Architecture Hub
-          </a>
+
+          <div class="flex items-center gap-2">
+            <a href="/tools/diagrams" class="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-slate-200 transition hover:border-white/30 hover:text-white text-sm whitespace-nowrap">
+              <span>📊</span>
+              <span class="hidden md:inline">Tools</span>
+            </a>
+            <a href="/architecture" class="flex items-center gap-2 text-blue-400 transition hover:text-blue-300 text-sm whitespace-nowrap">
+              ← <span class="hidden sm:inline">Hub</span>
+            </a>
+          </div>
         </div>
 
         <!-- Chapter Navigation -->
