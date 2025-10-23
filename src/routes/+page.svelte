@@ -1,8 +1,6 @@
 
 <script>
 	import FileUpload from '../lib/components/FileUpload.svelte';
-	import Dashboard from '../lib/components/Dashboard.svelte';
-	import ArchitectDashboard from '../lib/components/ArchitectDashboard.svelte';
 
 	import { parseGitLog, getCommitStats } from '../lib/parser/gitLogParser.js';
 	import { detectWorkSessions, getSessionStats } from '../lib/parser/sessionDetector.js';
@@ -155,8 +153,8 @@
 						<!-- Hero Content - Left Side (3/5) -->
 						<div class="lg:col-span-3">
 							<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[0.9]">
-								Transform git history into
-								<span class="text-blue-400">architectural insights</span>
+								Importer-exporter of
+								<span class="text-blue-400">well-architected skills</span>
 							</h1>
 
 							<p class="text-2xl md:text-3xl text-slate-300 mb-8 font-light leading-relaxed">
@@ -546,9 +544,13 @@
 
 						<!-- Dashboard Content -->
 						{#if activeTab === 'overview'}
-							<Dashboard {analytics} />
+							{#await import('../lib/components/Dashboard.svelte') then { default: Dashboard }}
+								<Dashboard {analytics} />
+							{/await}
 						{:else if activeTab === 'architect' && architectAnalytics}
-							<ArchitectDashboard architectAnalytics={architectAnalytics} />
+							{#await import('../lib/components/ArchitectDashboard.svelte') then { default: ArchitectDashboard }}
+								<ArchitectDashboard architectAnalytics={architectAnalytics} />
+							{/await}
 						{/if}
 					</div>
 				{/if}
