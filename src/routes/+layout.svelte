@@ -1,12 +1,12 @@
 <script>
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.png';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit'
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import Navbar from '$lib/components/Navbar.svelte';
 
 	let { children } = $props();
 
-	injectAnalytics()
-	
+	injectAnalytics();
 </script>
 
 <svelte:head>
@@ -44,5 +44,7 @@
 		content="software architecture, git analytics, technical debt, scaling readiness, architecture insights, MVP to enterprise"
 	/>
 </svelte:head>
+
+<Navbar />
 
 {@render children?.()}
