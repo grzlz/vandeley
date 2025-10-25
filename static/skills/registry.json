@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "description": "Skillful framework - Self-bootstrapping documentation skills registry",
+  "skills": {
+    "skillful-svelte": {
+      "name": "Skillful Svelte Documentation",
+      "description": "Generates comprehensive Spanish documentation for Svelte/SvelteKit projects following best practices",
+      "tech_stack": ["svelte", "sveltekit"],
+      "url": "/skills/skillful-svelte/SKILL.md",
+      "version": "1.0.0",
+      "diagrams": ["system-architecture", "sequence-diagram", "component-hierarchy", "main-interfaces"],
+      "requires_database_diagram": "conditional"
+    },
+    "skillful-react": {
+      "name": "Skillful React Documentation",
+      "description": "Generates comprehensive Spanish documentation for React/Next.js projects",
+      "tech_stack": ["react", "nextjs"],
+      "url": "/skills/skillful-react/SKILL.md",
+      "version": "1.0.0",
+      "status": "planned"
+    },
+    "skillful-python": {
+      "name": "Skillful Python Documentation",
+      "description": "Generates comprehensive Spanish documentation for Python projects",
+      "tech_stack": ["python"],
+      "url": "/skills/skillful-python/SKILL.md",
+      "version": "1.0.0",
+      "status": "planned"
+    },
+    "skillful-rust": {
+      "name": "Skillful Rust Documentation",
+      "description": "Generates comprehensive Spanish documentation for Rust projects",
+      "tech_stack": ["rust"],
+      "url": "/skills/skillful-rust/SKILL.md",
+      "version": "1.0.0",
+      "status": "planned"
+    },
+    "skillful-generic": {
+      "name": "Skillful Generic Documentation",
+      "description": "Fallback documentation generator for unknown tech stacks",
+      "tech_stack": ["unknown", "generic"],
+      "url": "/skills/skillful-generic/SKILL.md",
+      "version": "1.0.0",
+      "status": "active"
+    }
+  },
+  "meta": {
+    "framework": "Skillful",
+    "purpose": "Self-bootstrapping agent documentation system",
+    "creta_hint": "https://icarus.mx/creta/README.md"
+  }
+}

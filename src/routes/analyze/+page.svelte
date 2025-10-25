@@ -530,11 +530,11 @@
 
 						<!-- Dashboard Content -->
 						{#if activeTab === 'overview'}
-							{#await import('../lib/components/Dashboard.svelte') then { default: Dashboard }}
+							{#await import('$lib/components/Dashboard.svelte') then { default: Dashboard }}
 								<Dashboard {analytics} />
 							{/await}
 						{:else if activeTab === 'architect' && architectAnalytics}
-							{#await import('../lib/components/ArchitectDashboard.svelte') then { default: ArchitectDashboard }}
+							{#await import('$lib/components/ArchitectDashboard.svelte') then { default: ArchitectDashboard }}
 								<ArchitectDashboard architectAnalytics={architectAnalytics} />
 							{/await}
 						{/if}
