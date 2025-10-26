@@ -536,4 +536,7 @@ const routes = {
 // For now, default to svelte
 const skillPath = routes[tech_stack] || 'skillful/svelte/SKILL.md';
 ```
-
+--
+--
+#**This is waaaay to long, rewrite by human please** 
+--
