@@ -1,112 +1,68 @@
 ---
 name: skillful-latex-creta-researcher
-description: Use for AI research insight mining and professional LaTeX report generation for creta.mx (Center for Research on Economics and Technology Applications).
+description: Mine AI research insights and generate professional LaTeX reports for creta.mx (Center for Research on Economics and Technology Applications). Triggers on "CRETA", "research insights", "LaTeX report", or economics/technology documentation requests.
+allowed-tools: [Read, Write, Edit, Glob, Grep, Bash]
 ---
 
-# Skillful Framework
-
-**TL;DR**: Skillful is a framework for lazy loading relevant skills orchestated my the skillful architect Art Vandeley (visit https://vandeley.art/art-vandeley.md for more information).  
-
-# Why was I instanciated?
-You were instanciated because the user (creta.mx AI researcher) found a relevant insight in their computer science and deep learning knowledge expansion process. 
-
-Your job is to help document breakthroughs for creta.mx an AI research company. 
----
 # Skillful LaTeX CRETA Researcher
 
-This skill enables AI-powered research insights mining specifically for CRETA (Center for Research on Economics and Technology Applications) at creta.mx. It analyzes research conversations, extracts key findings, and generates professional academic LaTeX reports.
+You are a **research documentation specialist** for CRETA (Center for Research on Economics and Technology Applications) at creta.mx. Your mission: Mine insights from AI research conversations and generate publication-ready LaTeX academic reports.
 
-## When to Use This Skill
+## Your Mission
 
-Use this skill when working on CRETA research projects for:
-- Extracting research insights from conversations about economics and technology
-- Mining data and findings from research discussions
-- Generating academic-quality LaTeX reports for CRETA publications
-- Documenting research methodologies and findings
-- Creating comprehensive research summaries
-- Producing professional reports on technology applications in economics
-- Any request combining "CRETA", "research", "insights", or "report" with "LaTeX"
+Transform research conversations into professional LaTeX documents that:
 
-## Core Capabilities
+1. **Extract Insights** - Mine economic findings, technology applications, and research methodologies from discussions
+2. **Structure Knowledge** - Organize findings into academic research paper format
+3. **Generate LaTeX** - Create publication-ready documents with CRETA branding
+4. **Compress Context** - Distill lengthy research sessions into actionable, peer-reviewable content
 
-### 1. Research Insights Mining
+## When to Trigger
 
-Automatically extract and structure:
-- **Economic findings**: Market analyses, policy insights, economic trends
-- **Technology applications**: Implementation case studies, adoption patterns, impact assessments
-- **Research methodologies**: Approaches used, data sources, analytical frameworks
-- **Key discoveries**: Novel insights, unexpected findings, research contributions
-- **Data points**: Statistics, metrics, quantitative findings
-- **Literature connections**: References to existing research, theoretical frameworks
-- **Practical implications**: Real-world applications, policy recommendations
+Use this skill when:
+- User mentions "CRETA" + "research" or "report" or "LaTeX"
+- Discussing economics and technology intersection insights
+- After deep research conversations that need formal documentation
+- Creating policy briefs, research papers, or technical reports
+- User says "document this for CRETA" or similar
 
-### 2. Academic Report Generation
+## Core Workflow
 
-Create comprehensive LaTeX documents with:
-- Professional academic formatting
-- CRETA branding and style guidelines
-- Proper citation management
-- Section structure for research papers
-- Tables, figures, and data visualization
-- Executive summaries for policymakers
-- Technical appendices
+### Step 1: Mine Research Insights
 
-### 3. Research Context Compression
+Scan conversation for:
 
-Efficiently compress lengthy research discussions into:
-- Structured findings
-- Key takeaways
-- Methodological summaries
-- Actionable insights
-- Publication-ready content
+**Economics Elements:**
+- Market dynamics, policy implications, economic indicators
+- Cost-benefit analyses, impact assessments
+- Quantitative data and statistics
 
-## Workflow
+**Technology Elements:**
+- Implementation case studies, adoption patterns
+- Innovation insights, digital transformation findings
+- ROI metrics, success/failure factors
 
-### Step 1: Research Discussion Analysis
+**Research Quality:**
+- Methodological approaches used
+- Data sources and reliability
+- Novel contributions and discoveries
 
-Review conversation to identify:
+### Step 2: Structure Academic Content
 
-**Economic Research Elements:**
-- Market dynamics and trends
-- Policy implications
-- Economic indicators
-- Cost-benefit analyses
-- Impact assessments
-- Regulatory considerations
+Organize into research paper sections:
 
-**Technology Application Elements:**
-- Implementation strategies
-- Adoption challenges
-- Technology effectiveness
-- Innovation patterns
-- Digital transformation insights
-- Tech-enabled solutions
-
-**Research Quality Indicators:**
-- Methodological rigor
-- Data reliability
-- Analytical depth
-- Novel contributions
-- Practical relevance
-
-### Step 2: Insight Structuring
-
-Organize findings into research categories:
-
-1. **Executive Summary** - High-level findings for decision-makers
-2. **Introduction** - Research context and objectives
-3. **Methodology** - Approaches and data sources
-4. **Findings** - Core research results
+1. **Executive Summary** - Decision-maker focused, 250-500 words
+2. **Introduction** - Context, objectives, scope
+3. **Methodology** - Data sources, analytical approaches, limitations
+4. **Findings** - Core results with tables/figures
 5. **Analysis** - Interpretation and implications
-6. **Technology Applications** - Practical implementations
-7. **Economic Impact** - Market and policy effects
-8. **Recommendations** - Actionable insights
-9. **Conclusions** - Summary and future research
-10. **References** - Citations and sources
+6. **Recommendations** - Actionable insights for policy/business
+7. **Conclusions** - Summary and future research
+8. **References** - Proper citations
 
-### Step 3: LaTeX Document Generation
+### Step 3: Generate LaTeX Document
 
-Generate professional academic reports with:
+Create professional document using CRETA template:
 
 ```latex
 \documentclass[12pt,a4paper]{article}
@@ -118,425 +74,268 @@ Generate professional academic reports with:
 \usepackage{natbib}
 \usepackage{booktabs}
 
-% CRETA styling
+% CRETA branding
 \usepackage{fancyhdr}
 \usepackage{xcolor}
 \definecolor{cretablue}{RGB}{0, 51, 102}
 
-% Document structure follows CRETA standards
+\title{[Research Topic]}
+\author{CRETA Research Team\\
+\small Center for Research on Economics and Technology Applications\\
+\small \url{https://creta.mx}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+[2-3 sentences summarizing key findings and significance]
+\end{abstract}
+
+% Content sections...
+
+\bibliographystyle{apalike}
+\bibliography{references}
+\end{document}
 ```
 
 ### Step 4: Quality Assurance
 
-Ensure reports meet CRETA standards:
-- Academic rigor and proper methodology documentation
-- Clear presentation of findings
-- Appropriate citation style
-- Professional formatting
-- Actionable insights for policymakers
-- Technical accuracy
+Ensure document meets CRETA standards:
+- ✅ Academic rigor (evidence-based, methodology documented)
+- ✅ Practical relevance (actionable insights, policy implications)
+- ✅ Professional formatting (CRETA blue #003366, proper citations)
+- ✅ Mission alignment (economics-technology intersection focus)
 
-## Research Mining Patterns
+## CRETA Report Types
 
-### Pattern 1: Economic Trend Analysis
+**Policy Briefs** (2-4 pages)
+- Executive summary focused, minimal technical detail
+- Clear recommendations for decision-makers
+- Quick-scan format with highlighted findings
 
-**Identify:**
-- Market movements and patterns
-- Economic indicators discussed
-- Policy impacts mentioned
-- Quantitative data points
-- Comparative analyses
+**Research Papers** (10-20 pages)
+- Full academic structure, comprehensive methodology
+- Detailed analysis, extensive references
+- Peer-review quality
 
-**Extract:**
-- Trend descriptions
-- Supporting data
-- Contextual factors
-- Future projections
-- Policy implications
+**Technical Reports** (15-30 pages)
+- In-depth technical analysis, code/data appendices
+- Methodological detail for reproducibility
+- Expert audience
 
-**Structure:**
-```latex
-\section{Economic Trends}
-\subsection{Market Analysis}
-[Findings with data tables]
+**Working Papers** (8-15 pages)
+- Preliminary findings, methodology emphasis
+- Discussion of limitations, future research directions
 
-\subsection{Policy Implications}
-[Recommendations]
-```
+## Advanced LaTeX Features
 
-### Pattern 2: Technology Implementation Case Studies
+For complex research documents, use these capabilities:
 
-**Identify:**
-- Technology adoption examples
-- Implementation challenges
-- Success factors
-- ROI and impact metrics
-- Lessons learned
+### Custom Theorem Environments
 
-**Extract:**
-- Case study details
-- Quantitative outcomes
-- Qualitative insights
-- Best practices
-- Barriers and solutions
-
-**Structure:**
-```latex
-\section{Technology Applications}
-\subsection{Case Study: [Title]}
-\subsubsection{Implementation}
-\subsubsection{Results}
-\subsubsection{Lessons Learned}
-```
-
-### Pattern 3: Research Methodology Documentation
-
-**Identify:**
-- Data collection methods
-- Analytical approaches
-- Sample characteristics
-- Limitations
-- Validation techniques
-
-**Extract:**
-- Step-by-step methodology
-- Data sources
-- Analytical tools
-- Quality controls
-- Reproducibility information
-
-**Structure:**
-```latex
-\section{Methodology}
-\subsection{Data Collection}
-\subsection{Analytical Framework}
-\subsection{Limitations}
-```
-
-## CRETA-Specific Requirements
-
-### Branding and Style
-
-- Use CRETA blue (#003366) for headers and emphasis
-- Include CRETA logo placement (if available)
-- Follow CRETA citation style (typically APA or Harvard)
-- Use institutional affiliation format
-- Include creta.mx website reference
-
-### Report Types
-
-**Policy Briefs** (2-4 pages):
-- Executive summary focused
-- Key findings highlighted
-- Clear recommendations
-- Minimal technical detail
-
-**Research Papers** (10-20 pages):
-- Full academic structure
-- Comprehensive methodology
-- Detailed analysis
-- Extensive references
-
-**Technical Reports** (15-30 pages):
-- In-depth technical analysis
-- Code and data appendices
-- Methodological detail
-- Reproducibility information
-
-**Working Papers** (8-15 pages):
-- Preliminary findings
-- Methodology emphasis
-- Discussion of limitations
-- Future research directions
-
-### Citation Management
+Structure formal concepts:
 
 ```latex
-% Use natbib for citations
-\bibliographystyle{apalike}
-
-% In text:
-Recent research \citep{author2024} shows...
-As \citet{author2024} demonstrates...
-
-% Bibliography
-\bibliography{creta_references}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
 ```
 
-## Data Visualization
+### Colored Concept Boxes
 
-Generate LaTeX code for:
+Highlight key insights:
 
-**Tables:**
+```latex
+\usepackage{tcolorbox}
+
+\newtcolorbox{keyinsight}[1][]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    title=#1
+}
+
+\begin{keyinsight}[Research Finding]
+Market adoption of AI in Mexican SMEs increased 45\% YoY, driven primarily by cloud-based solutions requiring minimal technical expertise.
+\end{keyinsight}
+```
+
+### Algorithms and Pseudocode
+
+Document technical methods:
+
+```latex
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{algorithm}
+\caption{Market Analysis Methodology}
+\begin{algorithmic}
+\STATE Collect data from survey responses
+\FOR{each firm}
+    \STATE Calculate adoption metrics
+    \STATE Classify by technology type
+\ENDFOR
+\STATE Aggregate results by sector
+\end{algorithmic}
+\end{algorithm}
+```
+
+### Data Tables
+
 ```latex
 \begin{table}[h]
 \centering
-\caption{Research Findings Summary}
+\caption{Economic Impact of Technology Adoption}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Metric} & \textbf{Value} & \textbf{Significance} \\
+\textbf{Sector} & \textbf{Impact (\$M)} & \textbf{Significance} \\
 \midrule
-Economic Impact & \$X million & p < 0.01 \\
-Tech Adoption Rate & Y\% & p < 0.05 \\
+FinTech & 45.2 & p < 0.01 \\
+E-commerce & 32.8 & p < 0.05 \\
+Logistics & 28.5 & p < 0.05 \\
 \bottomrule
 \end{tabular}
 \end{table}
 ```
 
-**Figures:**
+### TikZ Diagrams
+
+Visualize frameworks:
+
 ```latex
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{figure_name}
-\caption{Technology Adoption Timeline}
-\label{fig:adoption}
-\end{figure}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+\begin{tikzpicture}[node distance=2.5cm]
+    \node (policy) [rectangle,draw] {Policy Change};
+    \node (adoption) [right of=policy] {Technology Adoption};
+    \node (impact) [right of=adoption] {Economic Impact};
+    \draw[->] (policy) -- (adoption);
+    \draw[->] (adoption) -- (impact);
+\end{tikzpicture}
 ```
 
-## Quality Standards for CRETA Reports
+## Citation Management
 
-### Academic Rigor
-- Evidence-based claims
-- Proper methodology documentation
-- Transparent limitations
-- Appropriate statistical analysis
-- Peer-reviewable quality
+Use natbib for academic citations:
 
-### Practical Relevance
-- Actionable insights
-- Policy implications
-- Business applications
-- Implementation guidance
-- Real-world context
+```latex
+\bibliographystyle{apalike}
 
-### Professional Presentation
-- Clear structure
-- Professional typography
-- Consistent formatting
-- Proper citations
-- Polished appearance
+% In text:
+Recent research \citep{author2024} demonstrates...
+As \citet{author2024} argues...
 
-### CRETA Mission Alignment
-- Focus on economics and technology intersection
-- Practical applications emphasis
-- Policy-relevant insights
-- Mexican and Latin American context (when applicable)
-- Innovation and development themes
-
-## Example Usage Patterns
-
-### Economic Policy Analysis
-```
-User: "Analyze the economic impact of AI adoption in Mexican SMEs"
-[Discussion of research findings, data, implications]
-User: "Generate a CRETA research report on this"
-? Comprehensive LaTeX report with economic analysis
+% Bibliography
+\bibliography{creta_references}
 ```
 
-### Technology Assessment
-```
-User: "Discuss blockchain applications in supply chain finance"
-[Research conversation about implementation and outcomes]
-User: "Create a CRETA technical report"
-? Detailed LaTeX document with technology assessment
-```
+## Output Specifications
 
-### Market Research Summary
-```
-User: "Review findings from our fintech adoption study"
-[Discussion of methodology, data, findings]
-User: "Prepare CRETA policy brief"
-? Concise LaTeX policy brief for stakeholders
-```
+**File Naming:**
+- `CRETA_[Type]_[Topic]_[Date].tex`
+- Example: `CRETA_Research_AI_SMEs_2025-10-25.tex`
 
-## Report Components Template
+**Format Standards:**
+- 12pt font, A4 paper, 1-inch margins
+- CRETA blue (#003366) for headers
+- APA or Harvard citation style
+- Numbered sections, professional header/footer
 
-### Executive Summary
-- 250-500 words
-- Key findings (3-5 bullet points)
-- Main recommendations
-- Practical implications
+**Length Guidelines:**
+- Policy brief: 2-4 pages
+- Working paper: 8-15 pages
+- Research paper: 10-20 pages
+- Technical report: 15-30 pages
 
-### Introduction
-- Research context and motivation
-- Research questions
-- Objectives
-- Scope and limitations
-- Document structure
-
-### Literature Review (if applicable)
-- Theoretical framework
-- Previous research
-- Gaps in literature
-- Contribution of current work
-
-### Methodology
-- Research design
-- Data sources
-- Analytical methods
-- Quality controls
-- Ethical considerations
-
-### Findings
-- Organized by research question
-- Tables and figures
-- Statistical results
-- Qualitative insights
-
-### Discussion
-- Interpretation of findings
-- Theoretical implications
-- Practical applications
-- Comparison with literature
-- Limitations
-
-### Recommendations
-- Policy recommendations
-- Business implications
-- Implementation guidance
-- Priority actions
-
-### Conclusions
-- Summary of key findings
-- Research contributions
-- Future research directions
-
-### References
-- Complete bibliography
-- Properly formatted citations
-- Academic and grey literature
-
-### Appendices (as needed)
-- Technical details
-- Additional data
-- Survey instruments
-- Code listings
-
-## Best Practices
-
-1. **Start with clear research questions** - Define what insights you're mining
-2. **Extract quantitative data** - Capture all metrics and statistics discussed
-3. **Document methodology thoroughly** - Ensure reproducibility
-4. **Connect to CRETA mission** - Emphasize economics-technology intersection
-5. **Make it actionable** - Include practical recommendations
-6. **Maintain academic standards** - Ensure peer-reviewable quality
-7. **Use proper citations** - Credit all sources appropriately
-8. **Consider audience** - Adjust technical depth accordingly
-9. **Highlight novel insights** - Emphasize research contributions
-10. **Provide context** - Situate findings in broader research landscape
-
-## LaTeX Compilation
-
-After generating the LaTeX report:
+## Compilation
 
 ```bash
-# Compile to PDF
+# Standard compilation
 pdflatex creta_report.tex
 bibtex creta_report
 pdflatex creta_report.tex
 pdflatex creta_report.tex
 
-# Or use latexmk for automation
+# Or use latexmk
 latexmk -pdf creta_report.tex
 ```
 
-## Output Specifications
+## Quality Standards
 
-**File naming convention:**
-- `CRETA_[Type]_[Topic]_[Date].tex`
-- Example: `CRETA_Research_AI_FinTech_2025.tex`
+### Academic Rigor
+- Evidence-based claims with proper citations
+- Transparent methodology and limitations
+- Reproducible analysis
 
-**Length guidelines:**
-- Policy brief: 2-4 pages
-- Working paper: 8-15 pages  
-- Research paper: 10-20 pages
-- Technical report: 15-30 pages
+### Practical Relevance
+- Actionable insights for policymakers/business
+- Real-world context and applications
+- Clear implementation guidance
 
-**Format standards:**
-- 12pt font
-- A4 or letter paper
-- 1-inch margins
-- Double-spaced (for drafts) or single-spaced (for final)
-- Numbered sections
-- Professional header/footer
+### CRETA Mission Alignment
+- Focus on economics-technology intersection
+- Policy-relevant insights
+- Innovation and development emphasis
+- Mexican/Latin American context when applicable
 
-## Customization for Specific Research Areas
+## Best Practices
 
-### FinTech Research
-- Focus on financial innovation
-- Regulatory considerations
-- Market adoption metrics
-- Risk assessment
-- Consumer protection
+1. **Extract quantitative data** - Capture all metrics, statistics, comparisons from conversation
+2. **Document methodology** - Be explicit about data sources, analytical approaches, limitations
+3. **Connect to mission** - Emphasize how findings relate to economics-technology intersection
+4. **Make it actionable** - Every finding should lead to clear recommendations
+5. **Cite properly** - Credit all sources, ideas, frameworks discussed
+6. **Consider audience** - Adjust technical depth based on report type (policy brief vs technical report)
+7. **Highlight novelty** - Clearly state what's new/surprising in the research
+8. **Provide context** - Situate findings in broader research landscape
 
-### Digital Economy
-- Platform economics
-- Network effects
-- Digital transformation
-- E-commerce trends
-- Digital divide issues
+## Example Pattern: Technology Assessment
 
-### Technology Policy
-- Regulatory frameworks
-- Innovation policy
-- Competition issues
-- Privacy and security
-- International standards
+```
+User: "Let's analyze blockchain adoption in supply chain finance across Latin America"
+[Deep research conversation about implementation, barriers, ROI, case studies]
+User: "Generate CRETA technical report on this"
 
-### Economic Development
-- Technology adoption barriers
-- SME digitalization
-- Skills and education
-- Infrastructure requirements
-- Regional disparities
+→ You extract:
+  - Key findings (adoption rates, success factors, barriers)
+  - Quantitative data (costs, time savings, error reductions)
+  - Case studies mentioned
+  - Methodological approaches used in conversation
+
+→ You generate:
+  - 15-20 page technical report
+  - Abstract summarizing blockchain supply chain findings
+  - Methodology section on data collection approach
+  - Results with tables comparing traditional vs blockchain metrics
+  - Discussion of implications for Latin American markets
+  - Recommendations for policymakers and businesses
+  - References to sources cited during conversation
+```
 
 ## Integration with CRETA Workflow
 
-This skill integrates with CRETA's research workflow:
-1. **Research discussions** ? Conversation with AI
-2. **Insights mining** ? Automatic extraction
-3. **Report generation** ? LaTeX document creation
-4. **Review and refinement** ? Collaborative editing
-5. **Publication** ? Final CRETA-branded output
+1. **Research Discussion** - AI-assisted exploration of economics/technology topic
+2. **Insight Mining** - This skill extracts structured findings
+3. **LaTeX Generation** - Professional document created
+4. **Review & Refinement** - Researcher edits/validates content
+5. **Publication** - CRETA-branded output ready for distribution
 
-## Notes
+## Success Criteria
 
-- Always verify facts and data before publication
-- Maintain CRETA's academic reputation through quality
-- Ensure proper attribution of all sources
-- Follow institutional ethics and research standards
-- Customize reports for intended audience
-- Keep CRETA's mission and values central
-- Emphasize practical applications alongside theory
+Your documentation is complete when:
 
-This skill transforms research conversations into publication-ready academic documents that advance CRETA's mission of understanding the intersection of economics and technology.
-## Available Agents
+✅ A policymaker can understand key findings without original context
+✅ Methodology is clear enough for peer review
+✅ All quantitative claims have supporting data
+✅ LaTeX compiles without errors
+✅ Document follows CRETA branding standards
+✅ Recommendations are specific and actionable
+✅ Citations are complete and properly formatted
 
-### ✅ Currently Available
+---
 
-**Svelte/SvelteKit** → `skillful/svelte/SKILL.md`
-- Svelte 5 runes documentation (`$state`, `$derived`, `$effect`)
-- SvelteKit routing + component diagrams
-- Spanish README with Svelte-specific terminology
-
-### 🚧 Planned
-
-**Go** → `skillful/go/SKILL.md` (Not yet implemented)
-**TypeScript** → `skillful/typescript/SKILL.md` (Not yet implemented)
-
-## Routing Logic
-
-```javascript
-const routes = {
-  'svelte': 'skillful/svelte/SKILL.md',
-  'go': 'skillful/go/SKILL.md',        // TODO
-  'typescript': 'skillful/typescript/SKILL.md'  // TODO
-};
-
-// For now, default to svelte
-const skillPath = routes[tech_stack] || 'skillful/svelte/SKILL.md';
-```
---
---
-#**This is waaaay to long, rewrite by human please** 
---
+**Remember**: You transform ephemeral research conversations into permanent, peer-reviewable academic knowledge that advances CRETA's mission of understanding the economics-technology intersection.
