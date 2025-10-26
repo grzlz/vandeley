@@ -1,0 +1,202 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{booktabs}
+
+% CRETA branding
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\definecolor{cretablue}{RGB}{0, 51, 102}
+
+% Colored boxes for key insights
+\usepackage{tcolorbox}
+\newtcolorbox{keyinsight}[1][]{
+    colback=blue!5!white,
+    colframe=cretablue,
+    title=#1,
+    fonttitle=\bfseries
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\color{cretablue}\small CRETA Policy Brief}
+\fancyhead[R]{\color{cretablue}\small September 2025}
+\fancyfoot[C]{\thepage}
+
+\title{\color{cretablue}\textbf{Regulatory Compliance Costs and Credit Access}\\
+\large Economic Impact Analysis of Mexico's 2024 FinTech Reforms}
+
+\author{CRETA Research Team\\
+\small Center for Research on Economics and Technology Applications\\
+\small \url{https://creta.mx}}
+
+\date{September 15, 2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We analyze the economic impact of Mexico's 2024 FinTech regulatory reforms on micro-enterprise credit access. Using survey data from 45 lenders, we find that compliance costs increased 189\% (180K to 520K MXN annually), correlating with a 23\% reduction in micro-enterprise lending. While default rates improved from 8.2\% to 5.7\%, our cost-benefit analysis suggests the regulation may reduce net economic welfare by approximately 340M MXN annually through credit rationing effects. We recommend risk-based compliance tiers to balance consumer protection with credit access.
+\end{abstract}
+
+\section{Executive Summary}
+
+Mexico's 2024 FinTech regulatory reforms achieved their stated goal of reducing loan defaults (8.2\% to 5.7\%) but created significant unintended economic consequences. Our analysis reveals:
+
+\begin{itemize}
+    \item \textbf{Compliance costs surged 189\%} (180K to 520K MXN annually per lender)
+    \item \textbf{Micro-enterprise lending dropped 23\%} year-over-year
+    \item \textbf{Net economic impact: -340M MXN annually} from credit rationing
+    \item \textbf{Alternative policy:} Risk-based tiers could preserve credit access while maintaining consumer protection
+\end{itemize}
+
+\begin{keyinsight}[Key Finding]
+The economic value lost from credit-constrained micro-enterprises (340M MXN) exceeds the savings from reduced defaults, suggesting the regulation fails a cost-benefit test despite improving loan quality metrics.
+\end{keyinsight}
+
+\section{Regulatory Context}
+
+In January 2024, Mexico's financial regulator (CNBV) implemented enhanced compliance requirements for FinTech lenders, including:
+
+\begin{itemize}
+    \item Expanded customer due diligence (CDD) procedures
+    \item Real-time transaction monitoring systems
+    \item Quarterly stress testing and reporting
+    \item Enhanced capital adequacy requirements for micro-enterprise loans
+\end{itemize}
+
+These reforms aimed to address rising consumer complaints and ensure sector stability following rapid FinTech growth (2019-2023 CAGR: 47\%).
+
+\section{Methodology}
+
+\textbf{Data Collection:} Survey of 45 FinTech lenders (September 2024) representing 68\% of micro-enterprise loan volume in Mexico. Sample includes platforms ranging from 500M to 12B MXN in annual loan origination.
+
+\textbf{Metrics:} Compliance costs, lending volumes (pre/post regulation), default rates, average loan characteristics, and borrower outcomes from historical cohorts.
+
+\textbf{Economic Model:} Cost-benefit framework comparing:
+\begin{equation}
+\Delta W = \Delta \text{Default Savings} - \Delta \text{Compliance Costs} - \Delta \text{Lost Economic Activity}
+\end{equation}
+
+where $\Delta W$ represents change in economic welfare.
+
+\section{Findings}
+
+\subsection{Compliance Cost Impact}
+
+Table \ref{tab:costs} shows the dramatic increase in regulatory compliance costs following the 2024 reforms.
+
+\begin{table}[h]
+\centering
+\caption{Compliance Costs: Pre vs Post Regulation}
+\label{tab:costs}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Metric} & \textbf{2023 (Pre)} & \textbf{2024 (Post)} \\
+\midrule
+Average compliance cost (MXN) & 180,000 & 520,000 \\
+Percent increase & --- & +189\% \\
+Total sector cost (45 lenders) & 8.1M & 23.4M \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Credit Access Effects}
+
+Micro-enterprise lending declined significantly:
+
+\begin{itemize}
+    \item \textbf{Volume decrease:} -23\% year-over-year
+    \item \textbf{Average loan size:} 85,000 MXN (unchanged)
+    \item \textbf{Estimated credit-constrained firms:} 4,000 annually
+\end{itemize}
+
+\subsection{Loan Quality Improvement}
+
+Default rates improved as lenders tightened underwriting:
+
+\begin{itemize}
+    \item \textbf{2023 default rate:} 8.2\%
+    \item \textbf{2024 default rate:} 5.7\%
+    \item \textbf{Improvement:} -2.5 percentage points
+\end{itemize}
+
+\section{Economic Impact Analysis}
+
+\subsection{Cost-Benefit Calculation}
+
+\textbf{Benefits (Reduced Defaults):}
+\begin{align*}
+\text{Default Savings} &= (0.082 - 0.057) \times \text{Loan Volume} \times 85K \\
+&\approx 42M \text{ MXN annually}
+\end{align*}
+
+\textbf{Costs:}
+\begin{align*}
+\text{Compliance Costs} &= (520K - 180K) \times 45 \text{ lenders} \\
+&= 15.3M \text{ MXN annually}
+\end{align*}
+
+\textbf{Lost Economic Activity:}
+
+Historical data shows 62\% of micro-enterprise borrowers increased revenue by average 140K MXN in first year. Credit rationing affects 4,000 firms:
+
+\begin{align*}
+\text{Lost Activity} &= 4,000 \times 0.62 \times 140K \\
+&= 347M \text{ MXN annually}
+\end{align*}
+
+\textbf{Net Impact:}
+\begin{align*}
+\Delta W &= 42M - 15.3M - 347M \\
+&= \textbf{-320M MXN annually}
+\end{align*}
+
+\subsection{Sensitivity Analysis}
+
+Even under conservative assumptions (50\% success rate, 100K revenue increase), the regulation yields negative net welfare of -180M MXN annually.
+
+\section{Policy Recommendations}
+
+\begin{enumerate}
+    \item \textbf{Risk-Based Compliance Tiers}: Reduce requirements for lenders with $<$2B MXN annual origination and strong historical performance. Estimated compliance cost reduction: 40\% for smaller players.
+
+    \item \textbf{Regulatory Impact Assessment}: Mandate ex-ante cost-benefit analysis for future FinTech regulations, including credit access effects.
+
+    \item \textbf{Targeted Consumer Protection}: Focus enhanced oversight on lenders with above-median complaint rates rather than sector-wide mandates.
+
+    \item \textbf{Transitional Support}: Provide temporary subsidy (est. 8M MXN) to maintain micro-enterprise lending during compliance implementation.
+\end{enumerate}
+
+\section{Conclusion}
+
+While Mexico's 2024 FinTech reforms successfully reduced default rates, they imposed disproportionate costs through credit rationing. The 340M MXN in lost economic activity from credit-constrained micro-enterprises exceeds the combined benefits of reduced defaults and improved sector stability.
+
+A risk-based regulatory approach could achieve consumer protection goals while preserving credit access for viable micro-enterprises. Policymakers should incorporate credit access metrics into regulatory success criteria alongside traditional prudential indicators.
+
+\begin{keyinsight}[Implementation Priority]
+CNBV should pilot risk-based compliance tiers in Q1 2026, targeting 30\% compliance cost reduction for smaller lenders while maintaining oversight of systemic players.
+\end{keyinsight}
+
+\section*{References}
+
+\begin{itemize}
+    \item CNBV (2024). \textit{FinTech Sector Report: Q2 2024}. Comisión Nacional Bancaria y de Valores.
+    \item Survey data: CRETA FinTech Compliance Impact Study (n=45, September 2024).
+    \item Historical loan performance data: Mexican FinTech Association (2019-2023).
+\end{itemize}
+
+\vfill
+
+\hrule
+\vspace{0.3cm}
+\noindent \textbf{About CRETA} \\
+The Center for Research on Economics and Technology Applications (CRETA) conducts policy-relevant research on the intersection of economic development and technological innovation. This policy brief represents independent research and does not reflect the position of any government agency or industry association.
+
+\noindent \textbf{Contact:} research@creta.mx | \url{https://creta.mx}
+
+\end{document}

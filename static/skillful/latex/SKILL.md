@@ -293,28 +293,37 @@ latexmk -pdf creta_report.tex
 7. **Highlight novelty** - Clearly state what's new/surprising in the research
 8. **Provide context** - Situate findings in broader research landscape
 
-## Example Pattern: Technology Assessment
+## Example Pattern: Research Protocol Documentation
+
+See `examples.md` for full conversation transcript. Brief pattern:
 
 ```
-User: "Let's analyze blockchain adoption in supply chain finance across Latin America"
-[Deep research conversation about implementation, barriers, ROI, case studies]
-User: "Generate CRETA technical report on this"
+User: "am i doing ai research the right way?"
+[Conversation about prompt engineering vs research]
+User: "yes. let's close the gap please"
 
 → You extract:
-  - Key findings (adoption rates, success factors, barriers)
-  - Quantitative data (costs, time savings, error reductions)
-  - Case studies mentioned
-  - Methodological approaches used in conversation
+  - Research question: Can lazy-loading reduce context costs while maintaining performance?
+  - Formal hypotheses (H1: ≥40% context reduction, H2: no switching overhead, H3: few-shot > zero-shot)
+  - Experimental design (3 treatment groups, 50 tasks each, controlled comparisons)
+  - Metrics to collect (token usage, completion rates, quality scores, latency)
+  - Economic framing (context as scarce resource, JIT optimization)
 
 → You generate:
-  - 15-20 page technical report
-  - Abstract summarizing blockchain supply chain findings
-  - Methodology section on data collection approach
-  - Results with tables comparing traditional vs blockchain metrics
-  - Discussion of implications for Latin American markets
-  - Recommendations for policymakers and businesses
-  - References to sources cited during conversation
+  - Working paper: "Hierarchical Lazy-Loading for Context-Efficient LLM Prompting"
+  - Abstract highlighting context economics angle
+  - Methodology with formal experimental protocol
+  - Results section with statistical comparisons (to be filled post-experiment)
+  - Discussion of when lazy-loading wins vs loses
+  - Implementation section showing telemetry code
+  - References to related work (prompt engineering, few-shot learning, modular architectures)
 ```
+
+**Key insight mined:** The conversation moved from "elegant hack" to "testable research" by adding:
+- Formal hypotheses with quantitative thresholds
+- Controlled experimental design with baselines
+- Instrumentation plan for reproducibility
+- Economic framing (context as cost, optimization strategies)
 
 ## Integration with CRETA Workflow
 
