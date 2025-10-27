@@ -24,3 +24,4 @@ vite.config.ts.timestamp-*
 *.md
 !static/*.md
 !static/**/*.md
+.claude

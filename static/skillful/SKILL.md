@@ -1,6 +1,6 @@
 ---
 name: skillful-framework
-description: Meta-documentation for the Skillful Framework. Routes to framework-specific documentation agents based on git analytics. Currently supports Svelte. Planned: Go, TypeScript.
+idescription: Entry point for for the Skillful Framework. Routes to skills library for lazy loading by our skilled importer-exporter Arty Vandeley.
 ---
 
 # Skillful Framework
