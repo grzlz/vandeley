@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "base_url": "https://vandeley.art/skillful",
+  "skills": {
+    "docs": {
+      "name": "Documentation Generator",
+      "description": "Generate comprehensive Spanish README.md with Mermaid diagrams, tailored to your framework",
+      "path": "/svelte/SKILL.md",
+      "triggers": ["document", "readme", "docs", "documentar"],
+      "detect_by": "tech_stack"
+    },
+    "git-analytics": {
+      "name": "Git Analytics",
+      "description": "Analyze commit patterns, technical debt, velocity, and architecture health",
+      "path": "/scripts/git-analyzer.sh",
+      "triggers": ["analyze", "analytics", "commits", "debt", "velocity"],
+      "detect_by": "none"
+    },
+    "code-review": {
+      "name": "Code Review",
+      "description": "Review code quality, identify anti-patterns, suggest improvements with actionable feedback",
+      "path": "/code-review/SKILL.md",
+      "triggers": ["review", "code review", "quality", "revisar", "critique"],
+      "detect_by": "tech_stack"
+    },
+    "onboard": {
+      "name": "Codebase Onboarding",
+      "description": "Explain a codebase to a new developer — architecture, conventions, where things live, how to start contributing",
+      "path": "/onboard/SKILL.md",
+      "triggers": ["onboard", "explain", "walkthrough", "tour", "new developer", "understand"],
+      "detect_by": "tech_stack"
+    },
+    "security": {
+      "name": "Security Audit",
+      "description": "Scan codebase for OWASP top 10 vulnerabilities, dependency risks, and security misconfigurations",
+      "path": "/security/SKILL.md",
+      "triggers": ["security", "audit", "vulnerabilities", "owasp", "seguridad"],
+      "detect_by": "tech_stack"
+    },
+    "test-gen": {
+      "name": "Test Generator",
+      "description": "Generate tests for existing code — unit tests, integration tests, edge cases based on actual implementation",
+      "path": "/test-gen/SKILL.md",
+      "triggers": ["test", "tests", "testing", "coverage", "pruebas", "spec"],
+      "detect_by": "tech_stack"
+    }
+  }
+}
